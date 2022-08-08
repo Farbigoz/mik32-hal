@@ -104,7 +104,7 @@ typedef struct
 	HAL_GPIO_PinType		Type;
 	//HAL_GPIO_PinCurrent	Current;
 	//HAL_GPIO_PinResistor	Resistor;
-	HAL_GPIO_PinActiveState	ActiveState;
+	HAL_GPIO_PinActiveState	ActiveState;			///< Only for 'PIN_TYPE_IO'
 } HAL_GPIO_TypeDef;
 
 
