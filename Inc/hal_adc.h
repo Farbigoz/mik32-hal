@@ -26,8 +26,6 @@ typedef enum {
 
 
 typedef struct {
-	ANALOG_REG_TypeDef	*Instance;
-
 	HAL_ADC_Channel		Channel;
 
 	HAL_ADC_RefSource	Ref;

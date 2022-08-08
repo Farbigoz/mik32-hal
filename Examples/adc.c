@@ -12,7 +12,6 @@ HAL_ADC_TypeDef hadc = {0};
 
 
 void InitAdc() {
-	hadc.Instance = ANALOG_REG;
 	hadc.Channel = HAL_ADC_CHANNEL_1;
 	hadc.Ref = HAL_ADC_REF_INTERNAL;
 
@@ -68,8 +67,8 @@ int main() {
 		if (HAL_ADC_ValueAvailable(&hadc)) {
 			adcValue = HAL_ADC_GetValue(&hadc);
 
-			itoa(adcValue, sendBuff, 10);
-			sendBuff[strlen(sendBuff)] = '\n';
+			itoa(adcValue, sendBuff, 10);			// Add value to send buffer
+			sendBuff[strlen(sendBuff)] = '\n';		// Add 'new line' to send buffer
 
 			HAL_UART_Transmit(&huart1, (uint8_t *)sendBuff, strlen(sendBuff));
 
