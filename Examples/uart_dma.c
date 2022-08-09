@@ -43,11 +43,11 @@ void InitGpio() {
 	HAL_GPIO_TypeDef uartRxPin;
 
 	/* Configure UART 1 Tx pin */
-	__HAL_GPIO_INIT_UART1_TXD(uartTxPin);		// PORT 1, PIN 9
+	__HAL_GPIO_CONFIGURE_UART1_TXD(uartTxPin);		// PORT 1, PIN 9
 	HAL_GPIO_Init(&uartTxPin);
 
 	/* Configure UART 1 Rx pin */
-	__HAL_GPIO_INIT_UART1_RXD(uartRxPin);		// PORT 1, PIN 8
+	__HAL_GPIO_CONFIGURE_UART1_RXD(uartRxPin);		// PORT 1, PIN 8
 	HAL_GPIO_Init(&uartRxPin);
 }
 

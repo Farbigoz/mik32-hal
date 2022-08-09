@@ -4,7 +4,7 @@
 HAL_DAC_TypeDef dac1 = {0};
 
 
-void InitAdc() {
+void InitDac() {
 	dac1.Channel = HAL_DAC_CHANNEL_1;
 	dac1.Ref = HAL_DAC_REF_INTERNAL;
 	dac1.FreqDivider = 31;
@@ -17,7 +17,7 @@ void InitAdc() {
 int main() {
 	HAL_InitClock();
 
-	InitAdc();
+	InitDac();
 
 	uint16_t dacValue = 0;
 
