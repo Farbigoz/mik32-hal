@@ -30,39 +30,39 @@ typedef enum {
 
 /// Номер пинов
 typedef enum {
-	GPIO_PIN_0		= 0x0,		///< Пин 0
-	GPIO_PIN_1		= 0x1,		///< Пин 1
-	GPIO_PIN_2		= 0x2,		///< Пин 2
-	GPIO_PIN_3		= 0x3,		///< Пин 3
-	GPIO_PIN_4		= 0x4,		///< Пин 4
-	GPIO_PIN_5		= 0x5,		///< Пин 5
-	GPIO_PIN_6		= 0x6,		///< Пин 6
-	GPIO_PIN_7		= 0x7,		///< Пин 7
-	GPIO_PIN_8		= 0x8,		///< Пин 8
-	GPIO_PIN_9		= 0x9,		///< Пин 9
-	GPIO_PIN_10		= 0xA,		///< Пин 10
-	GPIO_PIN_11		= 0xB,		///< Пин 11
-	GPIO_PIN_12		= 0xC,		///< Пин 12
-	GPIO_PIN_13		= 0xD,		///< Пин 13
-	GPIO_PIN_14		= 0xE,		///< Пин 14
-	GPIO_PIN_15		= 0xF,		///< Пин 15
+	HAL_GPIO_PIN_0		= 0x0,		///< Пин 0
+	HAL_GPIO_PIN_1		= 0x1,		///< Пин 1
+	HAL_GPIO_PIN_2		= 0x2,		///< Пин 2
+	HAL_GPIO_PIN_3		= 0x3,		///< Пин 3
+	HAL_GPIO_PIN_4		= 0x4,		///< Пин 4
+	HAL_GPIO_PIN_5		= 0x5,		///< Пин 5
+	HAL_GPIO_PIN_6		= 0x6,		///< Пин 6
+	HAL_GPIO_PIN_7		= 0x7,		///< Пин 7
+	HAL_GPIO_PIN_8		= 0x8,		///< Пин 8
+	HAL_GPIO_PIN_9		= 0x9,		///< Пин 9
+	HAL_GPIO_PIN_10		= 0xA,		///< Пин 10
+	HAL_GPIO_PIN_11		= 0xB,		///< Пин 11
+	HAL_GPIO_PIN_12		= 0xC,		///< Пин 12
+	HAL_GPIO_PIN_13		= 0xD,		///< Пин 13
+	HAL_GPIO_PIN_14		= 0xE,		///< Пин 14
+	HAL_GPIO_PIN_15		= 0xF,		///< Пин 15
 } HAL_GPIO_Pin;
 
 
 /// Режим
 typedef enum {
-	PIN_MODE_INPUT,				///< Режим пина - Вход
-	PIN_MODE_OUTPUT,			///< Режим пина - Выход
+	HAL_PIN_MODE_INPUT,				///< Режим пина - Вход
+	HAL_PIN_MODE_OUTPUT,			///< Режим пина - Выход
 } HAL_GPIO_PinMode;
 
 
 typedef enum {
-	PIN_TYPE_IO,
-	PIN_TYPE_ADC,
-	PIN_TYPE_DAC,
-	PIN_TYPE_TIMER,
-	PIN_TYPE_INTERFACE_1,
-	PIN_TYPE_INTERFACE_2,
+	HAL_PIN_TYPE_IO,
+	HAL_PIN_TYPE_ADC,
+	HAL_PIN_TYPE_DAC,
+	HAL_PIN_TYPE_TIMER,
+	HAL_PIN_TYPE_INTERFACE_1,
+	HAL_PIN_TYPE_INTERFACE_2,
 } HAL_GPIO_PinType;
 
 
@@ -88,8 +88,8 @@ typedef enum {
 
 /// Активный уровень сигнала
 typedef enum {
-	PIN_ACTIVE_HI,			///< Активный уровент - высокий
-	PIN_ACTIVE_LO,			///< Активный уровень - низкий
+	HAL_PIN_ACTIVE_HI,			///< Активный уровент - высокий
+	HAL_PIN_ACTIVE_LO,			///< Активный уровень - низкий
 } HAL_GPIO_PinActiveState;
 
 

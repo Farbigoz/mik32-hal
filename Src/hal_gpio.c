@@ -29,38 +29,38 @@ void HAL_GPIO_Init(HAL_GPIO_TypeDef *GpioTypeDef) {
 
 	// Установка режима порта
 	switch (GpioTypeDef->Type) {
-		case PIN_TYPE_IO:
+		case HAL_PIN_TYPE_IO:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_1);
 			break;
 
-		case PIN_TYPE_ADC:
+		case HAL_PIN_TYPE_ADC:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_3);
-			GpioTypeDef->Mode = PIN_MODE_INPUT;
+			GpioTypeDef->Mode = HAL_PIN_MODE_INPUT;
 			break;
 
-		case PIN_TYPE_DAC:
+		case HAL_PIN_TYPE_DAC:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_0);
-			GpioTypeDef->Mode = PIN_MODE_OUTPUT;
+			GpioTypeDef->Mode = HAL_PIN_MODE_OUTPUT;
 			break;
 
-		case PIN_TYPE_TIMER:
+		case HAL_PIN_TYPE_TIMER:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_2);
 			break;
 
-		case PIN_TYPE_INTERFACE_1:
+		case HAL_PIN_TYPE_INTERFACE_1:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_0);
 			break;
 
-		case PIN_TYPE_INTERFACE_2:
+		case HAL_PIN_TYPE_INTERFACE_2:
 			__GPIO_SET_PAD_CONTROL(*gpioPadCfg, GpioTypeDef->Pin, __PAD_CONTROL_2);
 			break;
 	}
 
-	if (GpioTypeDef->Mode == PIN_MODE_INPUT)
+	if (GpioTypeDef->Mode == HAL_PIN_MODE_INPUT)
 	{
 		GpioTypeDef->PortInstance->DIRECTION_IN = 1 << GpioTypeDef->Pin;
 	}
-	else if (GpioTypeDef->Mode == PIN_MODE_OUTPUT)
+	else if (GpioTypeDef->Mode == HAL_PIN_MODE_OUTPUT)
 	{
 		GpioTypeDef->PortInstance->DIRECTION_OUT = 1 << GpioTypeDef->Pin;
 	}
@@ -71,8 +71,8 @@ void HAL_GPIO_Init(HAL_GPIO_TypeDef *GpioTypeDef) {
 
 void HAL_GPIO_WritePin(HAL_GPIO_TypeDef *GpioTypeDef, bool PinState) {
 	if (
-			(GpioTypeDef->ActiveState == PIN_ACTIVE_HI && PinState == true) ||
-			(GpioTypeDef->ActiveState == PIN_ACTIVE_LO && PinState == false)
+			(GpioTypeDef->ActiveState == HAL_PIN_ACTIVE_HI && PinState == true) ||
+			(GpioTypeDef->ActiveState == HAL_PIN_ACTIVE_LO && PinState == false)
 	){
 		GpioTypeDef->PortInstance->OUTPUT |= 1 << GpioTypeDef->Pin;
 	} else {
@@ -89,7 +89,7 @@ void HAL_GPIO_TogglePin(HAL_GPIO_TypeDef *GpioTypeDef) {
 bool HAL_GPIO_ReadPin(HAL_GPIO_TypeDef *GpioTypeDef) {
 	bool state = (GpioTypeDef->PortInstance->SET & (1 << GpioTypeDef->Pin)) != 0;
 
-	if (GpioTypeDef->ActiveState == PIN_ACTIVE_HI) {
+	if (GpioTypeDef->ActiveState == HAL_PIN_ACTIVE_HI) {
 		return state;
 	} else {
 		return !state;

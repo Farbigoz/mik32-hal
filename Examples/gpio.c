@@ -12,19 +12,19 @@ HAL_GPIO_TypeDef LED_2;
 void InitGpio() {
 	/* Configure LED_1 */
 	LED_1.PortInstance = GPIO_0;
-	LED_1.Pin = GPIO_PIN_0;
-	LED_1.Type = PIN_TYPE_IO;
-	LED_1.Mode = PIN_MODE_OUTPUT;
-	LED_1.ActiveState = PIN_ACTIVE_LO;
+	LED_1.Pin = HAL_GPIO_PIN_0;
+	LED_1.Type = HAL_PIN_TYPE_IO;
+	LED_1.Mode = HAL_PIN_MODE_OUTPUT;
+	LED_1.ActiveState = HAL_PIN_ACTIVE_LO;
 
 	HAL_GPIO_Init(&LED_1);
 
 	/* Configure LED_2 */
 	LED_2.PortInstance = GPIO_1;
-	LED_2.Pin = GPIO_PIN_0;
-	LED_2.Type = PIN_TYPE_IO;
-	LED_2.Mode = PIN_MODE_OUTPUT;
-	LED_2.ActiveState = PIN_ACTIVE_HI;
+	LED_2.Pin = HAL_GPIO_PIN_0;
+	LED_2.Type = HAL_PIN_TYPE_IO;
+	LED_2.Mode = HAL_PIN_MODE_OUTPUT;
+	LED_2.ActiveState = HAL_PIN_ACTIVE_HI;
 
 	HAL_GPIO_Init(&LED_2);
 
