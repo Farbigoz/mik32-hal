@@ -76,28 +76,28 @@ typedef struct {
 void HAL_TIMER32_Init(HAL_TIMER32_TypeDef *htim);
 
 
-inline  void HAL_TIMER32_Start(HAL_TIMER32_TypeDef *htim);
+void HAL_TIMER32_Start(HAL_TIMER32_TypeDef *htim);
 
 
-inline  void HAL_TIMER32_Stop(HAL_TIMER32_TypeDef *htim);
+void HAL_TIMER32_Stop(HAL_TIMER32_TypeDef *htim);
 
 
-inline  void HAL_TIMER32_Reset(HAL_TIMER32_TypeDef *htim);
+void HAL_TIMER32_Reset(HAL_TIMER32_TypeDef *htim);
 
 
-inline void HAL_TIMER32_ChannelStart(HAL_TIMER32_TypeDef *htim, uint32_t channel);
+void HAL_TIMER32_ChannelStart(HAL_TIMER32_TypeDef *htim, uint32_t channel);
 
 
-inline void HAL_TIMER32_ChannelStop(HAL_TIMER32_TypeDef *htim, uint32_t channel);
+void HAL_TIMER32_ChannelStop(HAL_TIMER32_TypeDef *htim, uint32_t channel);
 
 
-inline uint32_t HAL_TIMER32_GetValue(HAL_TIMER32_TypeDef *htim);
+uint32_t HAL_TIMER32_GetValue(HAL_TIMER32_TypeDef *htim);
 
 
-inline void HAL_TIMER32_ChannelSetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel, uint32_t compare);
+void HAL_TIMER32_ChannelSetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel, uint32_t compare);
 
 
-inline uint32_t HAL_TIMER32_ChannelGetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel);
+uint32_t HAL_TIMER32_ChannelGetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel);
 
 
 
