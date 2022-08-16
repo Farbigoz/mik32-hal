@@ -1,6 +1,10 @@
 #ifndef HAL_CFG_H
 #define HAL_CFG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdlib.h>
 
 #include <csr.h>
@@ -12,12 +16,7 @@
 #include "hal_types.h"
 
 
-#define CPU_CLOCK_MHZ		32
-
-
-#define rdtime() read_csr(time)
-#define rdcycle() read_csr(cycle)
-#define rdinstret() read_csr(instret)
+#define CPU_CLOCK_MHZ        32
 
 
 typedef enum {
@@ -27,8 +26,10 @@ typedef enum {
 } HAL_StatusTypeDef;
 
 
+uint64_t __div64_32(uint64_t rem, uint32_t base);
 
-__weak uint64_t HAL_GetCpuTick(void);
+
+__weak uint64_t HAL_GetCpuClock(void);
 
 
 __weak uint32_t HAL_GetCpuTimeMs(void);
@@ -40,7 +41,14 @@ __weak uint32_t HAL_GetCpuTimeMcs(void);
 __weak void HAL_Delay(uint32_t DelayMs);
 
 
+__weak void HAL_DelayMcs(uint32_t DelayMcs);
+
+
 void HAL_InitClock();
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
