@@ -1,6 +1,10 @@
 #ifndef HAL_ADC_H
 #define HAL_ADC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <pad_config.h>
 #include <analog_reg.h>
 
@@ -49,6 +53,11 @@ bool HAL_ADC_ValueAvailable(HAL_ADC_TypeDef *AdcTypeDef);
 
 
 uint16_t HAL_ADC_GetValue(HAL_ADC_TypeDef *AdcTypeDef);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif

@@ -1,6 +1,10 @@
 #ifndef HAL_GPIO_MAP_H
 #define HAL_GPIO_MAP_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 #define __HAL_GPIO_CONFIGURE(HAL_GPIO_INSTANCE, GPIO_INSTANCE, PIN, TYPE, MODE)										\
 																do {												\
@@ -139,5 +143,8 @@
 		__HAL_GPIO_CONFIGURE(HAL_GPIO_INSTANCE, GPIO_1, HAL_GPIO_PIN_0, HAL_PIN_TYPE_TIMER, HAL_PIN_MODE_INPUT)
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -1,6 +1,10 @@
 #ifndef HAL_DAC_H
 #define HAL_DAC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <analog_reg.h>
 
 #include "hal.h"
@@ -40,6 +44,11 @@ void HAL_DAC_Disable(HAL_DAC_TypeDef *DacTypeDef);
 
 
 void HAL_DAC_SetValue(HAL_DAC_TypeDef *DacTypeDef, uint16_t value);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif

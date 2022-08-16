@@ -1,6 +1,10 @@
 #ifndef HAL_UART_H
 #define HAL_UART_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <pad_config.h>
 #include <uart.h>
 
@@ -39,7 +43,6 @@ typedef enum {
 } HAL_UART_SyncMode;
 
 
-
 typedef struct {
 	uint32_t					BaudRate;
 
@@ -74,7 +77,6 @@ typedef struct {
 	__RO uint32_t		RxEnable			:1;			// REACK
 		 uint32_t							:10;		// -
 } HAL_UART_StateTypeDef;
-
 
 
 typedef struct {
@@ -115,5 +117,10 @@ void HAL_UART_Receive(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint1
 HAL_StatusTypeDef HAL_UART_Transmit_DMA(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
 
 HAL_StatusTypeDef HAL_UART_Receive_DMA(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

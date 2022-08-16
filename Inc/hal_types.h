@@ -1,6 +1,10 @@
 #ifndef HAL_TYPES_H
 #define HAL_TYPES_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <inttypes.h>
 
@@ -19,6 +23,10 @@
 
 #ifndef NULL
 #define NULL ((void *)0)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

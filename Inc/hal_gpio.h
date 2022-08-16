@@ -1,6 +1,10 @@
 #ifndef HAL_GPIO_H
 #define HAL_GPIO_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <pad_config.h>
 #include <gpio.h>
 
@@ -118,6 +122,11 @@ void HAL_GPIO_TogglePin(HAL_GPIO_TypeDef *TypeDef);
 
 
 bool HAL_GPIO_ReadPin(HAL_GPIO_TypeDef *TypeDef);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif

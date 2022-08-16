@@ -1,6 +1,10 @@
 #ifndef HAL_DMA_H
 #define HAL_DMA_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <dma_config.h>
 
 #include "hal.h"
@@ -79,7 +83,6 @@ typedef struct {
 	uint8_t					*DstBuffPtr;
 	uint32_t				BuffLength;
 
-	//DMA_CHANNEL_TypeDef	*_instance;
 	uint32_t				_config;
 } HAL_DMA_TypeDef;
 
@@ -93,5 +96,11 @@ void HAL_DMA_Enable(HAL_DMA_TypeDef *DmaTypeDef);
 bool HAL_DMA_Ready(HAL_DMA_TypeDef *DmaTypeDef);
 
 bool HAL_DMA_Busy(HAL_DMA_TypeDef *DmaTypeDef);
+
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
