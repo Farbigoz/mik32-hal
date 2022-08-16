@@ -61,7 +61,7 @@ void HAL_TIMER32_Init(HAL_TIMER32_TypeDef *htim) {
 	}
 
 	if (enableEpicInterrupt) {
-		EPIC->MASK_SET |= 1 << epicInterruptShift;
+		EPIC->MASK_SET = 1 << epicInterruptShift;
 	}
 }
 
