@@ -1,0 +1,120 @@
+\hypertarget{hal__irq_8h_source}{}\doxysection{hal\+\_\+irq.\+h}
+\label{hal__irq_8h_source}\index{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_irq.h@{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_irq.h}}
+\mbox{\hyperlink{hal__irq_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef IRQ\_H}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00002}00002 \textcolor{preprocessor}{\#define IRQ\_H}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00005}00005 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00006}00006 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <mcu32\_memory\_map.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <epic.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <csr.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <scr1\_csr\_encoding.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <gpio.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <timer32.h>}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{hal_8h}{hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00019}\mbox{\hyperlink{hal__irq_8h_aebd1a138ea7e9b164bdcf1a752d93c7b_aebd1a138ea7e9b164bdcf1a752d93c7b}{00019}} \textcolor{preprocessor}{\#define \_\_IRQ\_IS(epic)          (EPIC-\/>STATUS \& (1 << (epic)))}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00020}\mbox{\hyperlink{hal__irq_8h_a188a6688a08a445e6ac3f4b67671fe3b_a188a6688a08a445e6ac3f4b67671fe3b}{00020}} \textcolor{preprocessor}{\#define \_\_CLEAN\_IRQ(epic)       EPIC-\/>CLEAR = 1 << (epic)}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00023}00023 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00024}00024 \textcolor{comment}{ * @brief   Вхождение прерывания}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00025}00025 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00026}\mbox{\hyperlink{hal__irq_8h_a854ac00fd47f7ec89466db38dda859fd_a854ac00fd47f7ec89466db38dda859fd}{00026}} \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a854ac00fd47f7ec89466db38dda859fd_a854ac00fd47f7ec89466db38dda859fd}{trap\_handler}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00028}00028 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00029}00029 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00030}00030 \textcolor{comment}{ * @brief   Инициализация блока прерываний}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00031}00031 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00032}\mbox{\hyperlink{hal__irq_8h_a8faba6efff9e25335580285dfa61d35a_a8faba6efff9e25335580285dfa61d35a}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a8faba6efff9e25335580285dfa61d35a_a8faba6efff9e25335580285dfa61d35a}{HAL\_IRQ\_Init}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00034}00034 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00035}00035 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00036}00036 \textcolor{comment}{ * @brief   Включение прерываний}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00037}00037 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00038}\mbox{\hyperlink{hal__irq_8h_a72a029eb4f87dbab422ef2f8066e839f_a72a029eb4f87dbab422ef2f8066e839f}{00038}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a72a029eb4f87dbab422ef2f8066e839f_a72a029eb4f87dbab422ef2f8066e839f}{HAL\_IRQ\_Enable}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00040}00040 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00041}00041 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00042}00042 \textcolor{comment}{ * @brief   Выключение блока прерываний}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00043}00043 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00044}\mbox{\hyperlink{hal__irq_8h_a2f7b99f977b75b668e385591a7cba0d8_a2f7b99f977b75b668e385591a7cba0d8}{00044}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a2f7b99f977b75b668e385591a7cba0d8_a2f7b99f977b75b668e385591a7cba0d8}{HAL\_IRQ\_Disable}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00047}\mbox{\hyperlink{hal__irq_8h_a5471ff9ec4530ccca703c34a56aadc23_a5471ff9ec4530ccca703c34a56aadc23}{00047}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a5471ff9ec4530ccca703c34a56aadc23_a5471ff9ec4530ccca703c34a56aadc23}{HAL\_TIMER32\_0\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00049}\mbox{\hyperlink{hal__irq_8h_a411948212db82d21bd88ba7aded5832c_a411948212db82d21bd88ba7aded5832c}{00049}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a411948212db82d21bd88ba7aded5832c_a411948212db82d21bd88ba7aded5832c}{HAL\_USART\_0\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00051}\mbox{\hyperlink{hal__irq_8h_ac0019739ce8b704493bade6183599d74_ac0019739ce8b704493bade6183599d74}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_ac0019739ce8b704493bade6183599d74_ac0019739ce8b704493bade6183599d74}{HAL\_USART\_1\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00053}\mbox{\hyperlink{hal__irq_8h_a7a403a760247386966b0ad3d6f6328d7_a7a403a760247386966b0ad3d6f6328d7}{00053}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a7a403a760247386966b0ad3d6f6328d7_a7a403a760247386966b0ad3d6f6328d7}{HAL\_SPI\_0\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00055}\mbox{\hyperlink{hal__irq_8h_a71740831f1d592e57fe68efc3a97a466_a71740831f1d592e57fe68efc3a97a466}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a71740831f1d592e57fe68efc3a97a466_a71740831f1d592e57fe68efc3a97a466}{HAL\_SPI\_1\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00057}\mbox{\hyperlink{hal__irq_8h_a239917ff2a76a7df1a7b7895bca38610_a239917ff2a76a7df1a7b7895bca38610}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a239917ff2a76a7df1a7b7895bca38610_a239917ff2a76a7df1a7b7895bca38610}{HAL\_GPIO\_IRQ\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00059}\mbox{\hyperlink{hal__irq_8h_abf10ef482afee4e46db6229d8242a174_abf10ef482afee4e46db6229d8242a174}{00059}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_abf10ef482afee4e46db6229d8242a174_abf10ef482afee4e46db6229d8242a174}{HAL\_I2C\_0\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00061}\mbox{\hyperlink{hal__irq_8h_a538069f0cb9f4061493061eb97f1487f_a538069f0cb9f4061493061eb97f1487f}{00061}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a538069f0cb9f4061493061eb97f1487f_a538069f0cb9f4061493061eb97f1487f}{HAL\_I2C\_1\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00063}\mbox{\hyperlink{hal__irq_8h_af3e8d328657be2acaaec14dfd5042a79_af3e8d328657be2acaaec14dfd5042a79}{00063}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_af3e8d328657be2acaaec14dfd5042a79_af3e8d328657be2acaaec14dfd5042a79}{HAL\_WDT\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00065}\mbox{\hyperlink{hal__irq_8h_a6e47d63213653fe22e995bd5dff5efaa_a6e47d63213653fe22e995bd5dff5efaa}{00065}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a6e47d63213653fe22e995bd5dff5efaa_a6e47d63213653fe22e995bd5dff5efaa}{HAL\_TIMER16\_0\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00067}\mbox{\hyperlink{hal__irq_8h_af31b7e0c8d08960b2f998768025f4808_af31b7e0c8d08960b2f998768025f4808}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_af31b7e0c8d08960b2f998768025f4808_af31b7e0c8d08960b2f998768025f4808}{HAL\_TIMER16\_1\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00069}\mbox{\hyperlink{hal__irq_8h_a5e6ab33929f5a1dea60d328ab25c784b_a5e6ab33929f5a1dea60d328ab25c784b}{00069}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a5e6ab33929f5a1dea60d328ab25c784b_a5e6ab33929f5a1dea60d328ab25c784b}{HAL\_TIMER16\_2\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00071}\mbox{\hyperlink{hal__irq_8h_a0bf53297472abc97a277e37d738e2493_a0bf53297472abc97a277e37d738e2493}{00071}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a0bf53297472abc97a277e37d738e2493_a0bf53297472abc97a277e37d738e2493}{HAL\_TIMER32\_1\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00073}\mbox{\hyperlink{hal__irq_8h_a1f3aecf60bfc90db7573e347ee3d13f6_a1f3aecf60bfc90db7573e347ee3d13f6}{00073}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a1f3aecf60bfc90db7573e347ee3d13f6_a1f3aecf60bfc90db7573e347ee3d13f6}{HAL\_TIMER32\_2\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00075}\mbox{\hyperlink{hal__irq_8h_ace54c856eb4844b6e526e12ffffba321_ace54c856eb4844b6e526e12ffffba321}{00075}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_ace54c856eb4844b6e526e12ffffba321_ace54c856eb4844b6e526e12ffffba321}{HAL\_EEPROM\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00077}\mbox{\hyperlink{hal__irq_8h_a62438ec4c7f7e54e68a8a90ecf4940ab_a62438ec4c7f7e54e68a8a90ecf4940ab}{00077}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a62438ec4c7f7e54e68a8a90ecf4940ab_a62438ec4c7f7e54e68a8a90ecf4940ab}{HAL\_SPIFI\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00079}\mbox{\hyperlink{hal__irq_8h_a1041210411cc8d9296fbc638f2bec2b1_a1041210411cc8d9296fbc638f2bec2b1}{00079}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a1041210411cc8d9296fbc638f2bec2b1_a1041210411cc8d9296fbc638f2bec2b1}{HAL\_RTC\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00081}\mbox{\hyperlink{hal__irq_8h_a0114d3b5166cc7e96a85bd96a5827421_a0114d3b5166cc7e96a85bd96a5827421}{00081}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a0114d3b5166cc7e96a85bd96a5827421_a0114d3b5166cc7e96a85bd96a5827421}{HAL\_WDT\_DOM3\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00083}\mbox{\hyperlink{hal__irq_8h_a6d6e17d21153ae39503675780141e4d0_a6d6e17d21153ae39503675780141e4d0}{00083}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a6d6e17d21153ae39503675780141e4d0_a6d6e17d21153ae39503675780141e4d0}{HAL\_WDT\_SPIFI\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00085}\mbox{\hyperlink{hal__irq_8h_a879c081a40e3961f87251d4ffc090a5c_a879c081a40e3961f87251d4ffc090a5c}{00085}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a879c081a40e3961f87251d4ffc090a5c_a879c081a40e3961f87251d4ffc090a5c}{HAL\_WDT\_EEPROM\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00087}\mbox{\hyperlink{hal__irq_8h_acc16da01d594fbd31901ca01ff06cd56_acc16da01d594fbd31901ca01ff06cd56}{00087}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_acc16da01d594fbd31901ca01ff06cd56_acc16da01d594fbd31901ca01ff06cd56}{HAL\_DMA\_GLB\_ERR\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00089}\mbox{\hyperlink{hal__irq_8h_ae5765bc282e063b5b217815501fb7735_ae5765bc282e063b5b217815501fb7735}{00089}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_ae5765bc282e063b5b217815501fb7735_ae5765bc282e063b5b217815501fb7735}{HAL\_DMA\_CHANNELS\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00091}\mbox{\hyperlink{hal__irq_8h_a503ca8a4e0c74e3a0619298cc69d64d0_a503ca8a4e0c74e3a0619298cc69d64d0}{00091}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a503ca8a4e0c74e3a0619298cc69d64d0_a503ca8a4e0c74e3a0619298cc69d64d0}{HAL\_FREQ\_MON\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00093}\mbox{\hyperlink{hal__irq_8h_a2aa87dcc5321578d6818e0ab2c420e51_a2aa87dcc5321578d6818e0ab2c420e51}{00093}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a2aa87dcc5321578d6818e0ab2c420e51_a2aa87dcc5321578d6818e0ab2c420e51}{HAL\_PVD\_AVCC\_UNDER\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00095}\mbox{\hyperlink{hal__irq_8h_a06fe058456eb31ee9aaffc2c612a283e_a06fe058456eb31ee9aaffc2c612a283e}{00095}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a06fe058456eb31ee9aaffc2c612a283e_a06fe058456eb31ee9aaffc2c612a283e}{HAL\_PVD\_AVCC\_OVER\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00097}\mbox{\hyperlink{hal__irq_8h_a583f6f33eb74210523c79ce5a76058f5_a583f6f33eb74210523c79ce5a76058f5}{00097}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a583f6f33eb74210523c79ce5a76058f5_a583f6f33eb74210523c79ce5a76058f5}{HAL\_PVD\_VCC\_UNDER\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00099}\mbox{\hyperlink{hal__irq_8h_a21aa134ea9fdcb3ceb7afdfb9c97bea7_a21aa134ea9fdcb3ceb7afdfb9c97bea7}{00099}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_a21aa134ea9fdcb3ceb7afdfb9c97bea7_a21aa134ea9fdcb3ceb7afdfb9c97bea7}{HAL\_PVD\_VCC\_OVER\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00101}\mbox{\hyperlink{hal__irq_8h_abec7c41dce0ed7a1b1b37865d7b2daca_abec7c41dce0ed7a1b1b37865d7b2daca}{00101}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_abec7c41dce0ed7a1b1b37865d7b2daca_abec7c41dce0ed7a1b1b37865d7b2daca}{HAL\_BATTERY\_NON\_GOOD\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00103}\mbox{\hyperlink{hal__irq_8h_ae26f47fd08df0c7bff9e064fc41adca1_ae26f47fd08df0c7bff9e064fc41adca1}{00103}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_ae26f47fd08df0c7bff9e064fc41adca1_ae26f47fd08df0c7bff9e064fc41adca1}{HAL\_BOR\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00105}\mbox{\hyperlink{hal__irq_8h_afe874ed89bdc0fc9d4d68ef42e0b7751_afe874ed89bdc0fc9d4d68ef42e0b7751}{00105}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_afe874ed89bdc0fc9d4d68ef42e0b7751_afe874ed89bdc0fc9d4d68ef42e0b7751}{HAL\_TSENS\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00107}\mbox{\hyperlink{hal__irq_8h_ae07c1ac1f3450b57d83a97b365103079_ae07c1ac1f3450b57d83a97b365103079}{00107}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__irq_8h_ae07c1ac1f3450b57d83a97b365103079_ae07c1ac1f3450b57d83a97b365103079}{HAL\_ADC\_IRQ}}();}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00110}00110 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00111}00111 \}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00112}00112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{hal__irq_8h_source_l00114}00114 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

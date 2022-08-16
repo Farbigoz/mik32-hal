@@ -21,18 +21,10 @@ extern "C" {
 #define __GPIO_SET_PAD_CONTROL(padCfg, pinNum, control)			(padCfg |= control << (2 * pinNum))
 
 
-// Константы
-/*
-/// Порты ввода/вывода
-typedef enum {
-	GPIO_PORT_0,				///< Порт 0
-	GPIO_PORT_1,				///< Порт 1
-	GPIO_PORT_2,				///< Порт 2
-} HAL_GPIO_Port;
-*/
 
-
-/// Номер пинов
+/**
+ * @brief	Номер пина
+ */
 typedef enum {
 	HAL_GPIO_PIN_0		= 0x0,		///< Пин 0
 	HAL_GPIO_PIN_1		= 0x1,		///< Пин 1
@@ -53,24 +45,28 @@ typedef enum {
 } HAL_GPIO_Pin;
 
 
-/// Режим
+/**
+ * @brief	Режим работы пина
+ */
 typedef enum {
-	HAL_PIN_MODE_INPUT,				///< Режим пина - Вход
-	HAL_PIN_MODE_OUTPUT,			///< Режим пина - Выход
+	HAL_PIN_MODE_INPUT,				///< Вход
+	HAL_PIN_MODE_OUTPUT,			///< Выход
 } HAL_GPIO_PinMode;
 
 
+/**
+ * @brief	Тип пина
+ */
 typedef enum {
-	HAL_PIN_TYPE_IO,
-	HAL_PIN_TYPE_ADC,
-	HAL_PIN_TYPE_DAC,
-	HAL_PIN_TYPE_TIMER,
-	HAL_PIN_TYPE_INTERFACE_1,
-	HAL_PIN_TYPE_INTERFACE_2,
+	HAL_PIN_TYPE_IO,				///< Ввод/Вывол
+	HAL_PIN_TYPE_ADC,				///< АЦП
+	HAL_PIN_TYPE_TIMER,				///< Выходы/Входы таймеров (ШИМ, Захват)
+	HAL_PIN_TYPE_INTERFACE_1,		///< Интерфейсы (UART, I2C, SPI)
+	HAL_PIN_TYPE_INTERFACE_2,		///< Интерфейсы (UART, I2C, SPI)
 } HAL_GPIO_PinType;
 
 
-/* В документации есть, по факту нет
+/* В документации есть, в SDK на микроконтроллер этих регистров нет
 
 /// Нагрузочная возможность выхода
 typedef enum {
@@ -90,38 +86,75 @@ typedef enum {
 */
 
 
-/// Активный уровень сигнала
+/**
+ * @brief	Активный уровень сигнала
+ */
 typedef enum {
-	HAL_PIN_ACTIVE_HI,			///< Активный уровент - высокий
+	HAL_PIN_ACTIVE_HI,			///< Активный уровень - высокий
 	HAL_PIN_ACTIVE_LO,			///< Активный уровень - низкий
 } HAL_GPIO_PinActiveState;
 
 
-
-
+/**
+ * @brief	Объявление структуры обработчкиа GPIO
+ */
 typedef struct
 {
-	//HAL_GPIO_Port			Port;
-	GPIO_TypeDef			*PortInstance;
-	HAL_GPIO_Pin			Pin;
-	HAL_GPIO_PinMode		Mode;
-	HAL_GPIO_PinType		Type;
+	GPIO_TypeDef			*PortInstance;		///< Экземпляр порта ввода/вывода
+	HAL_GPIO_Pin			Pin;				///< Пин
+	HAL_GPIO_PinType		Type;				///< Тип пина
+	HAL_GPIO_PinMode		Mode;				///< Режим пина
 	//HAL_GPIO_PinCurrent	Current;
 	//HAL_GPIO_PinResistor	Resistor;
-	HAL_GPIO_PinActiveState	ActiveState;			///< Only for 'PIN_TYPE_IO'
+	HAL_GPIO_PinActiveState	ActiveState;		///< Активный уровень пина (Только для режима Ввод/Вывод)
 } HAL_GPIO_TypeDef;
 
 
-void HAL_GPIO_Init(HAL_GPIO_TypeDef *TypeDef);
+/**
+ * @brief	Инициализация GPIO
+ *
+ * @param	hgpio - Экземпляр обработчкиа GPIO
+ */
+void HAL_GPIO_Init(HAL_GPIO_TypeDef *hgpio);
 
 
-void HAL_GPIO_WritePin(HAL_GPIO_TypeDef *TypeDef, bool PinState);
+/**
+ * @brief	Укороченная инициализация GPIO (Используется в hal_gpio_macros.h)
+ *
+ * @param	hgpio			- Экземпляр обработчкиа GPIO
+ * @param	portInstance	- Экземпляр порта ввода/вывода
+ * @param	pin				- Пин
+ * @param	mode			- Режим пина
+ * @param	type			- Тип пина
+ */
+void HAL_GPIO_ConfigInit(HAL_GPIO_TypeDef *hgpio, GPIO_TypeDef *portInstance, HAL_GPIO_Pin pin, HAL_GPIO_PinType type, HAL_GPIO_PinMode mode);
 
 
-void HAL_GPIO_TogglePin(HAL_GPIO_TypeDef *TypeDef);
+/**
+ * @brief	Установка выхода пина
+ *
+ * @param	hgpio - Экземпляр обработчкиа GPIO
+ * @param	state
+ */
+void HAL_GPIO_WritePin(HAL_GPIO_TypeDef *hgpio, bool state);
 
 
-bool HAL_GPIO_ReadPin(HAL_GPIO_TypeDef *TypeDef);
+/**
+ * @brief	Переключение выхода пина (вкл->выкл, выкл->вкл)
+ *
+ * @param	hgpio - Экземпляр обработчкиа GPIO
+ */
+void HAL_GPIO_TogglePin(HAL_GPIO_TypeDef *hgpio);
+
+
+/**
+ * @brief	Считывание пина
+ *
+ * @param	hgpio - Экземпляр обработчкиа GPIO
+ *
+ * @return	bool
+ */
+bool HAL_GPIO_ReadPin(HAL_GPIO_TypeDef *hgpio);
 
 
 #ifdef __cplusplus

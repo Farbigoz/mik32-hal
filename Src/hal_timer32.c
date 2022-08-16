@@ -2,7 +2,7 @@
 
 
 void HAL_TIMER32_Init(HAL_TIMER32_TypeDef *htim) {
-	uint32_t epicInterruptShift = 0;
+	uint32_t epicInterruptShift;
 	bool enableEpicInterrupt = false;
 
 	if (htim->Instance == TIMER32_0)
@@ -81,13 +81,13 @@ inline  void HAL_TIMER32_Reset(HAL_TIMER32_TypeDef *htim) {
 }
 
 
-inline void HAL_TIMER32_ChannelStart(HAL_TIMER32_TypeDef *htim, uint32_t channel) {
+inline void HAL_TIMER32_ChannelStart(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {
 	if (channel > TIMER32_CHANNEL_COUNT) { return; }
 	htim->Instance->Channels[channel].Control |= TIMER32_CH_CONTROL_ENABLE_M;
 }
 
 
-inline void HAL_TIMER32_ChannelStop(HAL_TIMER32_TypeDef *htim, uint32_t channel) {
+inline void HAL_TIMER32_ChannelStop(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {
 	if (channel > TIMER32_CHANNEL_COUNT) { return; }
 	htim->Instance->Channels[channel].Control |= TIMER32_CH_CONTROL_DISABLE_M;
 }
@@ -98,13 +98,25 @@ inline uint32_t HAL_TIMER32_GetValue(HAL_TIMER32_TypeDef *htim) {
 }
 
 
-inline void HAL_TIMER32_ChannelSetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel, uint32_t compare) {
+void HAL_TIMER32_ChannelSetCapture(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel, uint32_t capture) {
+	if (channel > TIMER32_CHANNEL_COUNT) { return; }
+	htim->Instance->Channels[channel].ICR = capture;
+}
+
+
+uint32_t HAL_TIMER32_ChannelGetCapture(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {
+	if (channel > TIMER32_CHANNEL_COUNT) { return 0; }
+	return htim->Instance->Channels[channel].ICR;
+}
+
+
+inline void HAL_TIMER32_ChannelSetCompare(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel, uint32_t compare) {
 	if (channel > TIMER32_CHANNEL_COUNT) { return; }
 	htim->Instance->Channels[channel].OCR = compare;
 }
 
 
-inline uint32_t HAL_TIMER32_ChannelGetCompare(HAL_TIMER32_TypeDef *htim, uint32_t channel) {
+inline uint32_t HAL_TIMER32_ChannelGetCompare(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {
 	if (channel > TIMER32_CHANNEL_COUNT) { return 0; }
 	return htim->Instance->Channels[channel].OCR;
 }
@@ -114,9 +126,9 @@ __weak void HAL_TIMER32_IRQ_OverflowCallback(HAL_TIMER32_TypeDef *htim) {};
 
 __weak void HAL_TIMER32_IRQ_UnderflowCallback(HAL_TIMER32_TypeDef *htim) {};
 
-__weak void HAL_TIMER32_IRQ_ChannelCaptureCallback(HAL_TIMER32_TypeDef *htim, uint32_t channel) {};
+__weak void HAL_TIMER32_IRQ_ChannelCaptureCallback(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {};
 
-__weak void HAL_TIMER32_IRQ_ChannelCompareCallback(HAL_TIMER32_TypeDef *htim, uint32_t channel) {};
+__weak void HAL_TIMER32_IRQ_ChannelCompareCallback(HAL_TIMER32_TypeDef *htim, HAL_TIMER32_Channel channel) {};
 
 
 
@@ -133,45 +145,45 @@ void HAL_TIMER32_IRQHandler(HAL_TIMER32_TypeDef *htim) {
 		HAL_TIMER32_IRQ_UnderflowCallback(htim);
 	}
 
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH1)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_1)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH1));
-		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, TIMER32_CH1);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_1));
+		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, HAL_TIMER32_CHANNEL_1);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH2)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_2)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH2));
-		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, TIMER32_CH2);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_2));
+		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, HAL_TIMER32_CHANNEL_2);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH3)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_3)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH3));
-		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, TIMER32_CH3);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_3));
+		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, HAL_TIMER32_CHANNEL_3);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH4)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_4)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(TIMER32_CH4));
-		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, TIMER32_CH4);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_CAPTURE(HAL_TIMER32_CHANNEL_4));
+		HAL_TIMER32_IRQ_ChannelCaptureCallback(htim, HAL_TIMER32_CHANNEL_4);
 	}
 
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(TIMER32_CH1)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_1)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(TIMER32_CH1));
-		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, TIMER32_CH1);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_1));
+		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, HAL_TIMER32_CHANNEL_1);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(TIMER32_CH2)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_2)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(TIMER32_CH2));
-		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, TIMER32_CH2);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_2));
+		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, HAL_TIMER32_CHANNEL_2);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(TIMER32_CH3)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_3)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(TIMER32_CH3));
-		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, TIMER32_CH3);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_3));
+		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, HAL_TIMER32_CHANNEL_3);
 	}
-	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(TIMER32_CH4)))
+	else if (__TIMER32_IRQ_IS(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_4)))
 	{
-		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(TIMER32_CH4));
-		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, TIMER32_CH4);
+		__TIMER32_CLEAN_IRQ(htim, TIMER32_IRQ_COMPARE(HAL_TIMER32_CHANNEL_4));
+		HAL_TIMER32_IRQ_ChannelCompareCallback(htim, HAL_TIMER32_CHANNEL_4);
 	}
 }

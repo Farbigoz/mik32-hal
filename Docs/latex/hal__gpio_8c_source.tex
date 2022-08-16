@@ -1,0 +1,107 @@
+\hypertarget{hal__gpio_8c_source}{}\doxysection{hal\+\_\+gpio.\+c}
+\label{hal__gpio_8c_source}\index{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_gpio.c@{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_gpio.c}}
+\mbox{\hyperlink{hal__gpio_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../Inc/hal\_gpio.h"{}}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00004}\mbox{\hyperlink{hal__gpio_8h_a5339f89105950fb5ef31333e5d906b25_a5339f89105950fb5ef31333e5d906b25}{00004}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8c_a5339f89105950fb5ef31333e5d906b25_a5339f89105950fb5ef31333e5d906b25}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00005}00005     \textcolor{keyword}{volatile} uint32\_t *gpioPadCfg;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00007}00007     \textcolor{comment}{// Адрес конфигурации порта}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00008}00008     \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}} == GPIO\_0)}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00009}00009     \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00010}00010         PM-\/>CLK\_APB\_P\_SET |= PM\_CLOCK\_GPIO\_0\_M;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00011}00011         gpioPadCfg = \&PAD\_CONFIG-\/>PORT\_0\_CFG;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00012}00012     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00013}00013     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}} == GPIO\_1)}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00015}00015         PM-\/>CLK\_APB\_P\_SET |= PM\_CLOCK\_GPIO\_1\_M;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00016}00016         gpioPadCfg = \&PAD\_CONFIG-\/>PORT\_1\_CFG;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00018}00018     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}} == GPIO\_2)}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00020}00020         PM-\/>CLK\_APB\_P\_SET |= PM\_CLOCK\_GPIO\_2\_M;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00021}00021         gpioPadCfg = \&PAD\_CONFIG-\/>PORT\_2\_CFG;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00023}00023     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00024}00024         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00027}00027     \textcolor{comment}{// Очистка режима порта}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00028}00028     \mbox{\hyperlink{hal__gpio_8h_a0b0f9e01d84a2f5e551695cde8c66aa7_a0b0f9e01d84a2f5e551695cde8c66aa7}{\_\_GPIO\_CLEAN\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00030}00030     \textcolor{comment}{// Установка режима порта}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00031}00031     \textcolor{keywordflow}{switch} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a35067e104376d96162bc5e347c372bfd_a35067e104376d96162bc5e347c372bfd}{Type}}) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00032}00032         \textcolor{keywordflow}{case} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac93d9ee4d826909b3b3144f7775ac87b}{HAL\_PIN\_TYPE\_IO}}:}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00033}00033             \mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{\_\_GPIO\_SET\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}}, \mbox{\hyperlink{hal__gpio_8h_a13d16ec927f9c597482584454c358dd4_a13d16ec927f9c597482584454c358dd4}{\_\_PAD\_CONTROL\_1}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00034}00034             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00036}00036         \textcolor{keywordflow}{case} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acadd1f685d4705b65a17b02a880059fe3c}{HAL\_PIN\_TYPE\_ADC}}:}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00037}00037             \mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{\_\_GPIO\_SET\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}}, \mbox{\hyperlink{hal__gpio_8h_ab0a9f269199999f7218e626a57069165_ab0a9f269199999f7218e626a57069165}{\_\_PAD\_CONTROL\_3}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00038}00038             hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{Mode}} = \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea13d3064bdf9b3b99512bca914f304d55}{HAL\_PIN\_MODE\_INPUT}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00039}00039             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00041}00041         \textcolor{keywordflow}{case} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca570acb53f6ab7fec9cd31d94733e9af6}{HAL\_PIN\_TYPE\_TIMER}}:}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00042}00042             \mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{\_\_GPIO\_SET\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}}, \mbox{\hyperlink{hal__gpio_8h_a9a57a6490be5cf004590c6957302f706_a9a57a6490be5cf004590c6957302f706}{\_\_PAD\_CONTROL\_2}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00043}00043             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00045}00045         \textcolor{keywordflow}{case} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca746af065b088c8ae4387239586b7206f}{HAL\_PIN\_TYPE\_INTERFACE\_1}}:}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00046}00046             \mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{\_\_GPIO\_SET\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}}, \mbox{\hyperlink{hal__gpio_8h_a68ad17339ec0437d818caf1921ede70e_a68ad17339ec0437d818caf1921ede70e}{\_\_PAD\_CONTROL\_0}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00047}00047             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00049}00049         \textcolor{keywordflow}{case} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac4ace6067039162ec6ba41fae0a0808d}{HAL\_PIN\_TYPE\_INTERFACE\_2}}:}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00050}00050             \mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{\_\_GPIO\_SET\_PAD\_CONTROL}}(*gpioPadCfg, hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}}, \mbox{\hyperlink{hal__gpio_8h_a9a57a6490be5cf004590c6957302f706_a9a57a6490be5cf004590c6957302f706}{\_\_PAD\_CONTROL\_2}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00051}00051             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00054}00054     \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{Mode}} == \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea13d3064bdf9b3b99512bca914f304d55}{HAL\_PIN\_MODE\_INPUT}})}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00056}00056         hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>DIRECTION\_IN = 1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00058}00058     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{Mode}} == \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea88229607673cd8bb5d4926302c9a3f6e}{HAL\_PIN\_MODE\_OUTPUT}})}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00059}00059     \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00060}00060         hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>DIRECTION\_OUT = 1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00063}00063     \mbox{\hyperlink{hal__gpio_8c_adf36ddae6e6acb5120d7a4252398461c_adf36ddae6e6acb5120d7a4252398461c}{HAL\_GPIO\_WritePin}}(hgpio, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00067}\mbox{\hyperlink{hal__gpio_8h_a7d2d483ba4c3e4788ad2dae2e571fecb_a7d2d483ba4c3e4788ad2dae2e571fecb}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8c_a7d2d483ba4c3e4788ad2dae2e571fecb_a7d2d483ba4c3e4788ad2dae2e571fecb}{HAL\_GPIO\_ConfigInit}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio, GPIO\_TypeDef *portInstance, \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33d}{HAL\_GPIO\_Pin}} pin, \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529ac}{HAL\_GPIO\_PinType}} type, \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9e}{HAL\_GPIO\_PinMode}} mode) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00068}00068     hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}} = portInstance;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00069}00069     hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}} = pin;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00070}00070     hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a35067e104376d96162bc5e347c372bfd_a35067e104376d96162bc5e347c372bfd}{Type}} = type;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00071}00071     hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{Mode}} = mode;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00072}00072     \mbox{\hyperlink{hal__gpio_8c_a5339f89105950fb5ef31333e5d906b25_a5339f89105950fb5ef31333e5d906b25}{HAL\_GPIO\_Init}}(hgpio);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00073}00073 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00076}\mbox{\hyperlink{hal__gpio_8h_a6baecc2ca8bc9ed3403edaba948e58a4_a6baecc2ca8bc9ed3403edaba948e58a4}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8c_adf36ddae6e6acb5120d7a4252398461c_adf36ddae6e6acb5120d7a4252398461c}{HAL\_GPIO\_WritePin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio, \textcolor{keywordtype}{bool} PinState) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00077}00077     \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00078}00078             (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aa37b483eea420a342c4144d229ddcc57_aa37b483eea420a342c4144d229ddcc57}{ActiveState}} == \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aa454120a48bc9350bba8666d2213fb663}{HAL\_PIN\_ACTIVE\_HI}} \&\& PinState == \textcolor{keyword}{true}) ||}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00079}00079             (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aa37b483eea420a342c4144d229ddcc57_aa37b483eea420a342c4144d229ddcc57}{ActiveState}} == \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aae6a07ed1a3614229ca435087b3cd2190}{HAL\_PIN\_ACTIVE\_LO}} \&\& PinState == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00080}00080     )\{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00081}00081         hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>OUTPUT |= 1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00082}00082     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00083}00083         hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>OUTPUT \&= \string~(1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}});}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00085}00085 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00088}\mbox{\hyperlink{hal__gpio_8h_aad6c0ccad88b5c90b601fdd65f80dd03_aad6c0ccad88b5c90b601fdd65f80dd03}{00088}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8c_aad6c0ccad88b5c90b601fdd65f80dd03_aad6c0ccad88b5c90b601fdd65f80dd03}{HAL\_GPIO\_TogglePin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00089}00089     hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>OUTPUT \string^= 1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00093}\mbox{\hyperlink{hal__gpio_8h_a5c9e5d524ba2b53c28fdd6d52e55b0de_a5c9e5d524ba2b53c28fdd6d52e55b0de}{00093}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{hal__gpio_8c_a5c9e5d524ba2b53c28fdd6d52e55b0de_a5c9e5d524ba2b53c28fdd6d52e55b0de}{HAL\_GPIO\_ReadPin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00094}00094     \textcolor{keywordtype}{bool} state = (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}}-\/>SET \& (1 << hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}})) != 0;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00096}00096     \textcolor{keywordflow}{if} (hgpio-\/>\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aa37b483eea420a342c4144d229ddcc57_aa37b483eea420a342c4144d229ddcc57}{ActiveState}} == \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aa454120a48bc9350bba8666d2213fb663}{HAL\_PIN\_ACTIVE\_HI}}) \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00097}00097         \textcolor{keywordflow}{return} state;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00098}00098     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00099}00099         \textcolor{keywordflow}{return} !state;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8c_source_l00101}00101 \}}
+
+\end{DoxyCode}

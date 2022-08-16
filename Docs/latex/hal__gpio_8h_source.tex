@@ -1,0 +1,171 @@
+\hypertarget{hal__gpio_8h_source}{}\doxysection{hal\+\_\+gpio.\+h}
+\label{hal__gpio_8h_source}\index{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_gpio.h@{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_gpio.h}}
+\mbox{\hyperlink{hal__gpio_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef HAL\_GPIO\_H}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00002}00002 \textcolor{preprocessor}{\#define HAL\_GPIO\_H}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00005}00005 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00006}00006 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <pad\_config.h>}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <gpio.h>}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{hal_8h}{hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00014}\mbox{\hyperlink{hal__gpio_8h_a68ad17339ec0437d818caf1921ede70e_a68ad17339ec0437d818caf1921ede70e}{00014}} \textcolor{preprocessor}{\#define \_\_PAD\_CONTROL\_0     0x0}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00015}\mbox{\hyperlink{hal__gpio_8h_a13d16ec927f9c597482584454c358dd4_a13d16ec927f9c597482584454c358dd4}{00015}} \textcolor{preprocessor}{\#define \_\_PAD\_CONTROL\_1     0x1}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00016}\mbox{\hyperlink{hal__gpio_8h_a9a57a6490be5cf004590c6957302f706_a9a57a6490be5cf004590c6957302f706}{00016}} \textcolor{preprocessor}{\#define \_\_PAD\_CONTROL\_2     0x2}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00017}\mbox{\hyperlink{hal__gpio_8h_ab0a9f269199999f7218e626a57069165_ab0a9f269199999f7218e626a57069165}{00017}} \textcolor{preprocessor}{\#define \_\_PAD\_CONTROL\_3     0x3}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00020}\mbox{\hyperlink{hal__gpio_8h_a0b0f9e01d84a2f5e551695cde8c66aa7_a0b0f9e01d84a2f5e551695cde8c66aa7}{00020}} \textcolor{preprocessor}{\#define \_\_GPIO\_CLEAN\_PAD\_CONTROL(padCfg, pinNum)                (padCfg \&= \string~(0b11 << (2 * pinNum)))}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00021}\mbox{\hyperlink{hal__gpio_8h_a22942f154e73c2d5a615b97ff8aadaa8_a22942f154e73c2d5a615b97ff8aadaa8}{00021}} \textcolor{preprocessor}{\#define \_\_GPIO\_SET\_PAD\_CONTROL(padCfg, pinNum, control)         (padCfg |= control << (2 * pinNum))}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00025}00025 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00026}00026 \textcolor{comment}{ * @brief   Номер пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00027}00027 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00028}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33d}{00028}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00029}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da2effce623687f0df12fcaafb89eafbe9}{00029}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da2effce623687f0df12fcaafb89eafbe9}{HAL\_GPIO\_PIN\_0}}        = 0x0,      \textcolor{comment}{///< Пин 0}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00030}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33daa80b2476eb2deded135804a4ad5c18a3}{00030}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33daa80b2476eb2deded135804a4ad5c18a3}{HAL\_GPIO\_PIN\_1}}        = 0x1,      \textcolor{comment}{///< Пин 1}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00031}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da1f8c7fd5edd4e1504532a5aec53915e1}{00031}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da1f8c7fd5edd4e1504532a5aec53915e1}{HAL\_GPIO\_PIN\_2}}        = 0x2,      \textcolor{comment}{///< Пин 2}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00032}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6b823c0ff3073918670cfccadd226bf5}{00032}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6b823c0ff3073918670cfccadd226bf5}{HAL\_GPIO\_PIN\_3}}        = 0x3,      \textcolor{comment}{///< Пин 3}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00033}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dae59f848691b5054ee3adaf3991e1c255}{00033}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dae59f848691b5054ee3adaf3991e1c255}{HAL\_GPIO\_PIN\_4}}        = 0x4,      \textcolor{comment}{///< Пин 4}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00034}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da752c21933c865818b62a035109f4c1bd}{00034}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da752c21933c865818b62a035109f4c1bd}{HAL\_GPIO\_PIN\_5}}        = 0x5,      \textcolor{comment}{///< Пин 5}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00035}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6046c5dbd47ae5aa7170ef226bfeb888}{00035}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6046c5dbd47ae5aa7170ef226bfeb888}{HAL\_GPIO\_PIN\_6}}        = 0x6,      \textcolor{comment}{///< Пин 6}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00036}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da65ff0a8a2b9c70f8f0989141daf516aa}{00036}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da65ff0a8a2b9c70f8f0989141daf516aa}{HAL\_GPIO\_PIN\_7}}        = 0x7,      \textcolor{comment}{///< Пин 7}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00037}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33daf714ca722db22b421d7f7746bab59996}{00037}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33daf714ca722db22b421d7f7746bab59996}{HAL\_GPIO\_PIN\_8}}        = 0x8,      \textcolor{comment}{///< Пин 8}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00038}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6ab3cba65d2a38c64163daf7ed43817e}{00038}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da6ab3cba65d2a38c64163daf7ed43817e}{HAL\_GPIO\_PIN\_9}}        = 0x9,      \textcolor{comment}{///< Пин 9}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00039}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dad3a6969c95c9b8cd6688aa0cbbda8bf2}{00039}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dad3a6969c95c9b8cd6688aa0cbbda8bf2}{HAL\_GPIO\_PIN\_10}}      = 0xA,      \textcolor{comment}{///< Пин 10}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00040}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dae093cd1a4a27fa9645ca9b335bdbb387}{00040}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dae093cd1a4a27fa9645ca9b335bdbb387}{HAL\_GPIO\_PIN\_11}}      = 0xB,      \textcolor{comment}{///< Пин 11}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00041}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da77be0083abcb91e5f4cfd2b59bc6d39b}{00041}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da77be0083abcb91e5f4cfd2b59bc6d39b}{HAL\_GPIO\_PIN\_12}}      = 0xC,      \textcolor{comment}{///< Пин 12}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00042}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da3d2f6ca90bf2f191cd7072dd07ab5b8e}{00042}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da3d2f6ca90bf2f191cd7072dd07ab5b8e}{HAL\_GPIO\_PIN\_13}}      = 0xD,      \textcolor{comment}{///< Пин 13}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00043}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da1bbc014e15ee71bea8a337447135c55d}{00043}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33da1bbc014e15ee71bea8a337447135c55d}{HAL\_GPIO\_PIN\_14}}      = 0xE,      \textcolor{comment}{///< Пин 14}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00044}\mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dade4dfb0a3be0464dd0b5ca8552e1f436}{00044}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33dade4dfb0a3be0464dd0b5ca8552e1f436}{HAL\_GPIO\_PIN\_15}}      = 0xF,      \textcolor{comment}{///< Пин 15}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00045}00045 \} \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33d}{HAL\_GPIO\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00047}00047 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00048}00048 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00049}00049 \textcolor{comment}{ * @brief   Режим работы пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00050}00050 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00051}\mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9e}{00051}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00052}\mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea13d3064bdf9b3b99512bca914f304d55}{00052}}     \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea13d3064bdf9b3b99512bca914f304d55}{HAL\_PIN\_MODE\_INPUT}},               \textcolor{comment}{///< Вход}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00053}\mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea88229607673cd8bb5d4926302c9a3f6e}{00053}}     \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9ea88229607673cd8bb5d4926302c9a3f6e}{HAL\_PIN\_MODE\_OUTPUT}},         \textcolor{comment}{///< Выход}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00054}00054 \} \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9e}{HAL\_GPIO\_PinMode}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00056}00056 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00057}00057 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00058}00058 \textcolor{comment}{ * @brief   Тип пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00059}00059 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00060}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529ac}{00060}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00061}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac93d9ee4d826909b3b3144f7775ac87b}{00061}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac93d9ee4d826909b3b3144f7775ac87b}{HAL\_PIN\_TYPE\_IO}},             \textcolor{comment}{///< Ввод/Вывол}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00062}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acadd1f685d4705b65a17b02a880059fe3c}{00062}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acadd1f685d4705b65a17b02a880059fe3c}{HAL\_PIN\_TYPE\_ADC}},               \textcolor{comment}{///< АЦП}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00063}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca570acb53f6ab7fec9cd31d94733e9af6}{00063}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca570acb53f6ab7fec9cd31d94733e9af6}{HAL\_PIN\_TYPE\_TIMER}},               \textcolor{comment}{///< Выходы/Входы таймеров (ШИМ, Захват)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00064}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca746af065b088c8ae4387239586b7206f}{00064}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529aca746af065b088c8ae4387239586b7206f}{HAL\_PIN\_TYPE\_INTERFACE\_1}},       \textcolor{comment}{///< Интерфейсы (UART, I2C, SPI)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00065}\mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac4ace6067039162ec6ba41fae0a0808d}{00065}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529acac4ace6067039162ec6ba41fae0a0808d}{HAL\_PIN\_TYPE\_INTERFACE\_2}},       \textcolor{comment}{///< Интерфейсы (UART, I2C, SPI)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00066}00066 \} \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529ac}{HAL\_GPIO\_PinType}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00069}00069 \textcolor{comment}{/* В документации есть, в SDK на микроконтроллер этих регистров нет}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00070}00070 \textcolor{comment}{}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00071}00071 \textcolor{comment}{/// Нагрузочная возможность выхода}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00072}00072 \textcolor{comment}{}typedef enum \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00073}00073     PIN\_CURRENT\_2\_mA    = 0x0,      ///< Макс нагрузка: 2 мА}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00074}00074     PIN\_CURRENT\_4\_mA    = 0x1,      ///< Макс нагрузка: 4 мА}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00075}00075     PIN\_CURRENT\_8\_mA    = 0x2,      ///< Макс нагрузка: 8 мА}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00076}00076 \} HAL\_GPIO\_PinCurrent;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00078}00078 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00079}00079 \textcolor{comment}{/// Резисторная подтяжка порта}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00080}00080 \textcolor{comment}{}typedef enum \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00081}00081     PIN\_RESISTOR\_NONE       = 0x0,      ///< Резистор подтяжки не подключён}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00082}00082     PIN\_RESISTOR\_PULLUP     = 0x1,      ///< Резистор подтяжки подключён к питанию (50 кОм)}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00083}00083     PIN\_RESISTOR\_PULLDOWN   = 0x2,      ///< Резистор подтяжки подключён к земле (50 кОм)}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00084}00084 \} HAL\_GPIO\_PinResistor;}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00086}00086 */}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00088}00088 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00089}00089 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00090}00090 \textcolor{comment}{ * @brief   Активный уровень сигнала}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00091}00091 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00092}\mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57a}{00092}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00093}\mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aa454120a48bc9350bba8666d2213fb663}{00093}}     \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aa454120a48bc9350bba8666d2213fb663}{HAL\_PIN\_ACTIVE\_HI}},         \textcolor{comment}{///< Активный уровень -\/ высокий}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00094}\mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aae6a07ed1a3614229ca435087b3cd2190}{00094}}     \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57aae6a07ed1a3614229ca435087b3cd2190}{HAL\_PIN\_ACTIVE\_LO}},         \textcolor{comment}{///< Активный уровень -\/ низкий}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00095}00095 \} \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57a}{HAL\_GPIO\_PinActiveState}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00097}00097 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00098}00098 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00099}00099 \textcolor{comment}{ * @brief   Объявление структуры обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00100}00100 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00101}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{00101}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00102}00102 \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00103}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{00103}}     GPIO\_TypeDef            *\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a3741df77bc9159724e764c90751221f8_a3741df77bc9159724e764c90751221f8}{PortInstance}};      \textcolor{comment}{///< Экземпляр порта ввода/вывода}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00104}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{00104}}     \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33d}{HAL\_GPIO\_Pin}}            \mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aba055b325c923aa661a82848b09b959c_aba055b325c923aa661a82848b09b959c}{Pin}};             \textcolor{comment}{///< Пин}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00105}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a35067e104376d96162bc5e347c372bfd_a35067e104376d96162bc5e347c372bfd}{00105}}     \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529ac}{HAL\_GPIO\_PinType}}        \mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a35067e104376d96162bc5e347c372bfd_a35067e104376d96162bc5e347c372bfd}{Type}};               \textcolor{comment}{///< Тип пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00106}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{00106}}     \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9e}{HAL\_GPIO\_PinMode}}        \mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_a10a2b8d2a9eb4dd207ddc3503cf27bb7_a10a2b8d2a9eb4dd207ddc3503cf27bb7}{Mode}};               \textcolor{comment}{///< Режим пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00107}00107     \textcolor{comment}{//HAL\_GPIO\_PinCurrent   Current;}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00108}00108     \textcolor{comment}{//HAL\_GPIO\_PinResistor  Resistor;}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00109}\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aa37b483eea420a342c4144d229ddcc57_aa37b483eea420a342c4144d229ddcc57}{00109}}     \mbox{\hyperlink{hal__gpio_8h_afccd061fd64ea95539296777dbe4c57a_afccd061fd64ea95539296777dbe4c57a}{HAL\_GPIO\_PinActiveState}}  \mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def_aa37b483eea420a342c4144d229ddcc57_aa37b483eea420a342c4144d229ddcc57}{ActiveState}};     \textcolor{comment}{///< Активный уровень пина (Только для режима Ввод/Вывод)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00110}00110 \} \mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}};}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00112}00112 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00113}00113 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00114}00114 \textcolor{comment}{ * @brief   Инициализация GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00115}00115 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00116}00116 \textcolor{comment}{ * @param   hgpio -\/ Экземпляр обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00117}00117 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00118}\mbox{\hyperlink{hal__gpio_8h_a5339f89105950fb5ef31333e5d906b25_a5339f89105950fb5ef31333e5d906b25}{00118}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8h_a5339f89105950fb5ef31333e5d906b25_a5339f89105950fb5ef31333e5d906b25}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00120}00120 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00121}00121 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00122}00122 \textcolor{comment}{ * @brief   Укороченная инициализация GPIO (Используется в hal\_gpio\_macros.h)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00123}00123 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00124}00124 \textcolor{comment}{ * @param   hgpio           -\/ Экземпляр обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00125}00125 \textcolor{comment}{ * @param   portInstance    -\/ Экземпляр порта ввода/вывода}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00126}00126 \textcolor{comment}{ * @param   pin             -\/ Пин}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00127}00127 \textcolor{comment}{ * @param   mode            -\/ Режим пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00128}00128 \textcolor{comment}{ * @param   type            -\/ Тип пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00129}00129 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00130}\mbox{\hyperlink{hal__gpio_8h_a7d2d483ba4c3e4788ad2dae2e571fecb_a7d2d483ba4c3e4788ad2dae2e571fecb}{00130}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8h_a7d2d483ba4c3e4788ad2dae2e571fecb_a7d2d483ba4c3e4788ad2dae2e571fecb}{HAL\_GPIO\_ConfigInit}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio, GPIO\_TypeDef *portInstance, \mbox{\hyperlink{hal__gpio_8h_a96117f294dc660eec5a623767293b33d_a96117f294dc660eec5a623767293b33d}{HAL\_GPIO\_Pin}} pin, \mbox{\hyperlink{hal__gpio_8h_a2c1384b9950b0bf157444b4b801529ac_a2c1384b9950b0bf157444b4b801529ac}{HAL\_GPIO\_PinType}} type, \mbox{\hyperlink{hal__gpio_8h_ad4f2609ecc4ab3728a11fb8631e14a9e_ad4f2609ecc4ab3728a11fb8631e14a9e}{HAL\_GPIO\_PinMode}} mode);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00132}00132 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00133}00133 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00134}00134 \textcolor{comment}{ * @brief   Установка выхода пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00135}00135 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00136}00136 \textcolor{comment}{ * @param   hgpio -\/ Экземпляр обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00137}00137 \textcolor{comment}{ * @param   state}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00138}00138 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00139}\mbox{\hyperlink{hal__gpio_8h_a6baecc2ca8bc9ed3403edaba948e58a4_a6baecc2ca8bc9ed3403edaba948e58a4}{00139}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8h_a6baecc2ca8bc9ed3403edaba948e58a4_a6baecc2ca8bc9ed3403edaba948e58a4}{HAL\_GPIO\_WritePin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio, \textcolor{keywordtype}{bool} state);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00141}00141 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00142}00142 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00143}00143 \textcolor{comment}{ * @brief   Переключение выхода пина (вкл-\/>выкл, выкл-\/>вкл)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00144}00144 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00145}00145 \textcolor{comment}{ * @param   hgpio -\/ Экземпляр обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00146}00146 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00147}\mbox{\hyperlink{hal__gpio_8h_aad6c0ccad88b5c90b601fdd65f80dd03_aad6c0ccad88b5c90b601fdd65f80dd03}{00147}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__gpio_8h_aad6c0ccad88b5c90b601fdd65f80dd03_aad6c0ccad88b5c90b601fdd65f80dd03}{HAL\_GPIO\_TogglePin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00149}00149 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00150}00150 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00151}00151 \textcolor{comment}{ * @brief   Считывание пина}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00152}00152 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00153}00153 \textcolor{comment}{ * @param   hgpio -\/ Экземпляр обработчкиа GPIO}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00154}00154 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00155}00155 \textcolor{comment}{ * @return  bool}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00156}00156 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00157}\mbox{\hyperlink{hal__gpio_8h_a5c9e5d524ba2b53c28fdd6d52e55b0de_a5c9e5d524ba2b53c28fdd6d52e55b0de}{00157}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{hal__gpio_8h_a5c9e5d524ba2b53c28fdd6d52e55b0de_a5c9e5d524ba2b53c28fdd6d52e55b0de}{HAL\_GPIO\_ReadPin}}(\mbox{\hyperlink{struct_h_a_l___g_p_i_o___type_def}{HAL\_GPIO\_TypeDef}} *hgpio);}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00160}00160 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00161}00161 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00162}00162 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{hal__gpio_8h_source_l00165}00165 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

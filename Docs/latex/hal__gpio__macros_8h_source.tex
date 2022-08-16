@@ -1,0 +1,147 @@
+\hypertarget{hal__gpio__macros_8h_source}{}\doxysection{hal\+\_\+gpio\+\_\+macros.\+h}
+\label{hal__gpio__macros_8h_source}\index{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_gpio\_macros.h@{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_gpio\_macros.h}}
+\mbox{\hyperlink{hal__gpio__macros_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef HAL\_GPIO\_MAP\_H}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00002}00002 \textcolor{preprocessor}{\#define HAL\_GPIO\_MAP\_H}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00005}00005 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00006}00006 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{hal__gpio_8h}{hal\_gpio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00011}00011 \textcolor{comment}{/* ADC */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00012}00012 \textcolor{comment}{/// @note ADC channel 1 pin -\/ PORT 1, PIN 5}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00013}\mbox{\hyperlink{hal__gpio__macros_8h_a1e01bb4fdb1a9cf0720bf6c717956e2d_a1e01bb4fdb1a9cf0720bf6c717956e2d}{00013}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH1(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00014}00014 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_5, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00015}00015 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00016}00016 \textcolor{comment}{/// @note ADC channel 2 -\/> PORT 1, PIN 7}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00017}\mbox{\hyperlink{hal__gpio__macros_8h_a3e40ba22149e3d1f04cedf97f7e1f4a8_a3e40ba22149e3d1f04cedf97f7e1f4a8}{00017}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH2(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00018}00018 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_7, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00019}00019 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00020}00020 \textcolor{comment}{/// @note ADC channel 3 -\/> PORT 0, PIN 2}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00021}\mbox{\hyperlink{hal__gpio__macros_8h_aa4bbe44882e9f660fce88c92f8145f74_aa4bbe44882e9f660fce88c92f8145f74}{00021}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH3(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00022}00022 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_2, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00023}00023 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00024}00024 \textcolor{comment}{/// @note ADC channel 4 -\/> PORT 0, PIN 4}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00025}\mbox{\hyperlink{hal__gpio__macros_8h_a558a253ca5001582151f453aab4d6446_a558a253ca5001582151f453aab4d6446}{00025}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH4(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00026}00026 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_4, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00028}00028 \textcolor{comment}{/// @note ADC channel 5 -\/> PORT 0, PIN 7}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00029}\mbox{\hyperlink{hal__gpio__macros_8h_a0acb942905ec35081759fe27154b4031_a0acb942905ec35081759fe27154b4031}{00029}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH5(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00030}00030 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_7, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00031}00031 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00032}00032 \textcolor{comment}{/// @note ADC channel 6 -\/> PORT 0, PIN 9}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00033}\mbox{\hyperlink{hal__gpio__macros_8h_a2e3ceeae9ac1ce4ad0ebabe478cc0363_a2e3ceeae9ac1ce4ad0ebabe478cc0363}{00033}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH6(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00034}00034 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_9, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00035}00035 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00036}00036 \textcolor{comment}{/// @note ADC channel 7 -\/> PORT 0, PIN 11}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00037}\mbox{\hyperlink{hal__gpio__macros_8h_a2e61abe26935ec49018743d6f3197d7a_a2e61abe26935ec49018743d6f3197d7a}{00037}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH7(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00038}00038 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_11, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00039}00039 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00040}00040 \textcolor{comment}{/// @note ADC channel 8 -\/> PORT 0, PIN 13}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00041}\mbox{\hyperlink{hal__gpio__macros_8h_a567e82be3ffb885498c5d191b059416a_a567e82be3ffb885498c5d191b059416a}{00041}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_ADC\_CH8(HAL\_GPIO\_INSTANCE)          \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00042}00042 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_13, HAL\_PIN\_TYPE\_ADC, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00045}00045 \textcolor{comment}{/* UART 0 */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00046}\mbox{\hyperlink{hal__gpio__macros_8h_a876637bdfa990ec388b22672326c4bb0_a876637bdfa990ec388b22672326c4bb0}{00046}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART0\_RTS(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00047}00047 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_8, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00049}\mbox{\hyperlink{hal__gpio__macros_8h_a30f5ed1d6b0b474528c720ea4f186ab7_a30f5ed1d6b0b474528c720ea4f186ab7}{00049}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART0\_CTS(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00050}00050 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_7, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00051}00051 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00052}00052 \textcolor{comment}{/// @note UART 0 Tx -\/> PORT 0, PIN 6}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00053}\mbox{\hyperlink{hal__gpio__macros_8h_a7b15684c0ec1b45976dde7402639b1af_a7b15684c0ec1b45976dde7402639b1af}{00053}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART0\_TXD(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00054}00054 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_6, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00055}00055 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00056}00056 \textcolor{comment}{/// @note UART 0 Rx -\/> PORT 0, PIN 5}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00057}\mbox{\hyperlink{hal__gpio__macros_8h_ad6f8e04257f1fb24772c7eec0a2034c2_ad6f8e04257f1fb24772c7eec0a2034c2}{00057}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART0\_RXD(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00058}00058 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_5, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00061}00061 \textcolor{comment}{/* UART 1 */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00062}\mbox{\hyperlink{hal__gpio__macros_8h_ac2fc870734ae636ced9dfc5284f4c08b_ac2fc870734ae636ced9dfc5284f4c08b}{00062}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART1\_RTS(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00063}00063 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_11, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00065}\mbox{\hyperlink{hal__gpio__macros_8h_a2861b9f5c656306070c6c1cb048f04f3_a2861b9f5c656306070c6c1cb048f04f3}{00065}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART1\_CTS(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00066}00066 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_10, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00067}00067 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00068}00068 \textcolor{comment}{/// @note UART 1 Tx -\/> PORT 1, PIN 9}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00069}\mbox{\hyperlink{hal__gpio__macros_8h_ab83eb83375f4c6b6aa2c39e6891bcde8_ab83eb83375f4c6b6aa2c39e6891bcde8}{00069}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART1\_TXD(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00070}00070 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_9, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00071}00071 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00072}00072 \textcolor{comment}{/// @note UART 1 Rx -\/> PORT 1, PIN 8}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00073}\mbox{\hyperlink{hal__gpio__macros_8h_a8a85b9310542c69fc053ff32fcdd3511_a8a85b9310542c69fc053ff32fcdd3511}{00073}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_UART1\_RXD(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00074}00074 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_8, HAL\_PIN\_TYPE\_INTERFACE\_1, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00077}00077 \textcolor{comment}{/* TIMER32 1 */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00078}00078 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00079}\mbox{\hyperlink{hal__gpio__macros_8h_a79673905f09878991761c596c649b94d_a79673905f09878991761c596c649b94d}{00079}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CLK(HAL\_GPIO\_INSTANCE)            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00080}00080 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_4, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00082}\mbox{\hyperlink{hal__gpio__macros_8h_ac8ebb01b59531d77ef4ec42087628f1d_ac8ebb01b59531d77ef4ec42087628f1d}{00082}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH4\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00083}00083 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_3, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00085}\mbox{\hyperlink{hal__gpio__macros_8h_a3ae549fc52901a02d88db8d3530cf628_a3ae549fc52901a02d88db8d3530cf628}{00085}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH3\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00086}00086 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_2, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00088}\mbox{\hyperlink{hal__gpio__macros_8h_a5f84adad177f78526335c200763c672f_a5f84adad177f78526335c200763c672f}{00088}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH2\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00089}00089 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_1, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00091}\mbox{\hyperlink{hal__gpio__macros_8h_af3af2fccbcb31e70d6ff9cb3c3af0ac5_af3af2fccbcb31e70d6ff9cb3c3af0ac5}{00091}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH1\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00092}00092 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_0, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00094}\mbox{\hyperlink{hal__gpio__macros_8h_ae17a836729e11b20e00e744c65521002_ae17a836729e11b20e00e744c65521002}{00094}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH4\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00095}00095 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_3, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00097}\mbox{\hyperlink{hal__gpio__macros_8h_a95e69ee9398761b146dca2e4b49ebbee_a95e69ee9398761b146dca2e4b49ebbee}{00097}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH3\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00098}00098 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_2, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00100}\mbox{\hyperlink{hal__gpio__macros_8h_aca1478c32696d18bbede5c730f5b5b8e_aca1478c32696d18bbede5c730f5b5b8e}{00100}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH2\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00101}00101 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_1, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00103}\mbox{\hyperlink{hal__gpio__macros_8h_aa3b50778cf04048cc51b0d4bc7421b2d_aa3b50778cf04048cc51b0d4bc7421b2d}{00103}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_1\_CH1\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00104}00104 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_0, HAL\_GPIO\_PIN\_0, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00107}00107 \textcolor{comment}{/* TIMER32 2 */}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00108}00108 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00109}\mbox{\hyperlink{hal__gpio__macros_8h_a8770aa6bfb65c4a46d410e7106c1259c_a8770aa6bfb65c4a46d410e7106c1259c}{00109}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CLK(HAL\_GPIO\_INSTANCE)            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00110}00110 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_4, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00112}\mbox{\hyperlink{hal__gpio__macros_8h_a53f12abeb99d524733d48726b8042b47_a53f12abeb99d524733d48726b8042b47}{00112}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH4\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00113}00113 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_3, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00115}\mbox{\hyperlink{hal__gpio__macros_8h_a465883995c183c35c09fafc19af7bc29_a465883995c183c35c09fafc19af7bc29}{00115}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH3\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00116}00116 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_2, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00118}\mbox{\hyperlink{hal__gpio__macros_8h_ad485f1d07a173ef1bdf722bdee6b675b_ad485f1d07a173ef1bdf722bdee6b675b}{00118}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH2\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00119}00119 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_1, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00121}\mbox{\hyperlink{hal__gpio__macros_8h_adf89a05e5eeeac55f57855aaf8fbbe05_adf89a05e5eeeac55f57855aaf8fbbe05}{00121}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH1\_PWM(HAL\_GPIO\_INSTANCE)        \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00122}00122 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_0, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_OUTPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00124}\mbox{\hyperlink{hal__gpio__macros_8h_a01ff7660ffb3056d37f5da267dbaf333_a01ff7660ffb3056d37f5da267dbaf333}{00124}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH4\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00125}00125 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_3, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00127}\mbox{\hyperlink{hal__gpio__macros_8h_a29969bbc4d738709c74878e5d0bf6ee0_a29969bbc4d738709c74878e5d0bf6ee0}{00127}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH3\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00128}00128 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_2, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00130}\mbox{\hyperlink{hal__gpio__macros_8h_afb8f8813e5b2a487dde6758ff18eb3d5_afb8f8813e5b2a487dde6758ff18eb3d5}{00130}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH2\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00131}00131 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_1, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00133}\mbox{\hyperlink{hal__gpio__macros_8h_a928773f13ec1887ac194873edced1d3a_a928773f13ec1887ac194873edced1d3a}{00133}} \textcolor{preprocessor}{\#define \_\_HAL\_GPIO\_INIT\_TIMER32\_2\_CH1\_CAPTURE(HAL\_GPIO\_INSTANCE)    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00134}00134 \textcolor{preprocessor}{        HAL\_GPIO\_ConfigInit(HAL\_GPIO\_INSTANCE, GPIO\_1, HAL\_GPIO\_PIN\_0, HAL\_PIN\_TYPE\_TIMER, HAL\_PIN\_MODE\_INPUT)}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00137}00137 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00138}00138 \}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00139}00139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{hal__gpio__macros_8h_source_l00141}00141 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

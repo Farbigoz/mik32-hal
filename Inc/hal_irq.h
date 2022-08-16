@@ -20,12 +20,27 @@ extern "C" {
 #define __CLEAN_IRQ(epic)		EPIC->CLEAR = 1 << (epic)
 
 
+/**
+ * @brief	Вхождение прерывания
+ */
 extern void trap_handler();
 
+
+/**
+ * @brief	Инициализация блока прерываний
+ */
 void HAL_IRQ_Init();
 
+
+/**
+ * @brief	Включение прерываний
+ */
 void HAL_IRQ_Enable();
 
+
+/**
+ * @brief	Выключение блока прерываний
+ */
 void HAL_IRQ_Disable();
 
 

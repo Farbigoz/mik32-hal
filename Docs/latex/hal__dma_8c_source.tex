@@ -1,0 +1,76 @@
+\hypertarget{hal__dma_8c_source}{}\doxysection{hal\+\_\+dma.\+c}
+\label{hal__dma_8c_source}\index{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dma.c@{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dma.c}}
+\mbox{\hyperlink{hal__dma_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../Inc/hal\_dma.h"{}}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00004}\mbox{\hyperlink{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}{00004}} \textcolor{keyword}{const} uint8\_t \mbox{\hyperlink{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}{\_\_defaultBuff}}[] = \textcolor{stringliteral}{"{}\(\backslash\)xff"{}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00007}\mbox{\hyperlink{hal__dma_8h_a74c703489ad918aa333820436feb3cfe_a74c703489ad918aa333820436feb3cfe}{00007}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dma_8c_a0be38bf2802119ccd72d1bed735e585e_a0be38bf2802119ccd72d1bed735e585e}{HAL\_DMA\_BaseInit}}(\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\_DMA\_TypeDef}} *DmaTypeDef) \{}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00008}00008     PM-\/>CLK\_AHB\_SET |= PM\_CLOCK\_DMA\_M;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00010}00010     DMA\_CHANNEL\_TypeDef *DmaChannel = \&DMA\_CONFIG-\/>CHANNELS[DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a4fbdbbff09a0f435693daccec9b0f146_a4fbdbbff09a0f435693daccec9b0f146}{Channel}}];}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00012}00012     DmaChannel-\/>SOURCE = (uint32\_t)\mbox{\hyperlink{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}{\_\_defaultBuff}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00013}00013     DmaChannel-\/>DESTINATIONS = (uint32\_t)\mbox{\hyperlink{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}{\_\_defaultBuff}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00014}00014     DmaChannel-\/>LEN = 1 -\/ 1;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00016}00016     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} = \mbox{\hyperlink{hal__dma_8h_a6ed81c4976d69534051e7626d5e32af1_a6ed81c4976d69534051e7626d5e32af1}{\_\_DMA\_CFG\_DEFAULT\_FIELDS}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00020}\mbox{\hyperlink{hal__dma_8h_a476d9c0aa62fdfe28945ca1c8daf7797_a476d9c0aa62fdfe28945ca1c8daf7797}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dma_8c_acc9e5243338ebebfd684d80b6009ef26_acc9e5243338ebebfd684d80b6009ef26}{HAL\_DMA\_Init}}(\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\_DMA\_TypeDef}} *DmaTypeDef) \{}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00021}00021     \mbox{\hyperlink{hal__dma_8c_a0be38bf2802119ccd72d1bed735e585e_a0be38bf2802119ccd72d1bed735e585e}{HAL\_DMA\_BaseInit}}(DmaTypeDef);}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00023}00023     DMA\_CHANNEL\_TypeDef *DmaChannel = \&DMA\_CONFIG-\/>CHANNELS[DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a4fbdbbff09a0f435693daccec9b0f146_a4fbdbbff09a0f435693daccec9b0f146}{Channel}}];}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00025}00025     \textcolor{comment}{// Priority}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00026}00026     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a0889ce4725e09d28cdf8574f910d5e0e_a0889ce4725e09d28cdf8574f910d5e0e}{Priority}} << DMA\_CFG\_CH\_PRIOR\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00028}00028     \textcolor{comment}{// ReadDirection}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00029}00029     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a56d391657d43a1c3b2a595367b4f3944_a56d391657d43a1c3b2a595367b4f3944}{ReadDirection}} << DMA\_CFG\_CH\_READ\_MODE\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00031}00031     \textcolor{comment}{// WriteDirection}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00032}00032     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_abd610dd619c78ed9d54a7928cc49121e_abd610dd619c78ed9d54a7928cc49121e}{WriteDirection}} << DMA\_CFG\_CH\_WRITE\_MODE\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00034}00034     \textcolor{comment}{// ReadIncrement}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00035}00035     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a5fda30135d38ec5b0ea3a1c2e9ee126e_a5fda30135d38ec5b0ea3a1c2e9ee126e}{ReadIncrement}} << DMA\_CFG\_CH\_READ\_INCREMENT\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00037}00037     \textcolor{comment}{// WriteIncrement}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00038}00038     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a9e3ce315b2dd74d48a61af4ce408e87f_a9e3ce315b2dd74d48a61af4ce408e87f}{WriteIncrement}} << DMA\_CFG\_CH\_WRITE\_INCREMENT\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00040}00040     \textcolor{comment}{// SourcePeriphery}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00041}00041     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a36b5a6734081986bae9ffd48dc0e9509_a36b5a6734081986bae9ffd48dc0e9509}{SourcePeriphery}} << DMA\_CFG\_CH\_READ\_REQ\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00043}00043     \textcolor{comment}{// DestinationPeriphery}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00044}00044     DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}} |= DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_afc5ef2c948799034993c86bf82095e0a_afc5ef2c948799034993c86bf82095e0a}{DestinationPeriphery}} << DMA\_CFG\_CH\_WRITE\_REQ\_S;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00046}00046     \textcolor{comment}{// Configure DMA}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00047}00047     DmaChannel-\/>CONFIG = DMA\_CFG\_CH\_DISABLE\_M | DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00051}\mbox{\hyperlink{hal__dma_8h_a8ed0fc5a74ab3603bc7eb607d796605f_a8ed0fc5a74ab3603bc7eb607d796605f}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dma_8c_a32090b355b008d771a3b7a0046f09db0_a32090b355b008d771a3b7a0046f09db0}{HAL\_DMA\_Enable}}(\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\_DMA\_TypeDef}} *DmaTypeDef) \{}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00052}00052     DMA\_CHANNEL\_TypeDef *DmaChannel = \&DMA\_CONFIG-\/>CHANNELS[DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a4fbdbbff09a0f435693daccec9b0f146_a4fbdbbff09a0f435693daccec9b0f146}{Channel}}];}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00054}00054     DmaChannel-\/>SOURCE          = (uint32\_t)DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a073b28be3818aedf56edb66f7669c780_a073b28be3818aedf56edb66f7669c780}{SrcBuffPtr}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00055}00055     DmaChannel-\/>DESTINATIONS    = (uint32\_t)DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac0a763577c31f99b087ed7b48bf6ab3b_ac0a763577c31f99b087ed7b48bf6ab3b}{DstBuffPtr}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00056}00056     DmaChannel-\/>LEN             = DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a84651b13059ab1b817c8f5e58137f2a8_a84651b13059ab1b817c8f5e58137f2a8}{BuffLength}} -\/ 1;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00058}00058     DmaChannel-\/>CONFIG = DMA\_CFG\_CH\_ENABLE\_M | DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_ac16fb0bad62ea9499a0f0f11127d00f0_ac16fb0bad62ea9499a0f0f11127d00f0}{\_config}};}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00059}00059 \}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00062}\mbox{\hyperlink{hal__dma_8h_a39aec1e3cd9bb9ac16b3a7975a5ce15c_a39aec1e3cd9bb9ac16b3a7975a5ce15c}{00062}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{hal__dma_8c_adb570714921d287bb0adbc38b4a6ecc6_adb570714921d287bb0adbc38b4a6ecc6}{HAL\_DMA\_Ready}}(\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\_DMA\_TypeDef}} *DmaTypeDef) \{}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00063}00063     \textcolor{keywordflow}{return} (DMA\_CONFIG-\/>ConfigStatus \& (1 << (DMA\_STATUS\_READY\_S + DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a4fbdbbff09a0f435693daccec9b0f146_a4fbdbbff09a0f435693daccec9b0f146}{Channel}}))) != 0;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00067}\mbox{\hyperlink{hal__dma_8h_a95e0221b82acaa40c18f485a3f691a4e_a95e0221b82acaa40c18f485a3f691a4e}{00067}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{hal__dma_8c_a208a4b2367f4d6ad03dcd8bf407c2519_a208a4b2367f4d6ad03dcd8bf407c2519}{HAL\_DMA\_Busy}}(\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\_DMA\_TypeDef}} *DmaTypeDef) \{}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00068}00068     \textcolor{keywordflow}{return} (DMA\_CONFIG-\/>ConfigStatus \& (1 << (DMA\_STATUS\_READY\_S + DmaTypeDef-\/>\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def_a4fbdbbff09a0f435693daccec9b0f146_a4fbdbbff09a0f435693daccec9b0f146}{Channel}}))) == 0;}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{hal__dma_8c_source_l00070}00070 }
+
+\end{DoxyCode}

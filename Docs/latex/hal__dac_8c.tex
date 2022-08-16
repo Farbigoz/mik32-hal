@@ -1,0 +1,95 @@
+\hypertarget{hal__dac_8c}{}\doxysection{Файл D\+:/repos/untitled/lib/mik32-\/hal/\+Src/hal\+\_\+dac.c}
+\label{hal__dac_8c}\index{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dac.c@{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dac.c}}
+{\ttfamily \#include \char`\"{}../\+Inc/hal\+\_\+dac.\+h\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hal__dac_8c_a6fbb7e74e06f5b73a17aa1c48f7985bb_a6fbb7e74e06f5b73a17aa1c48f7985bb}{HAL\+\_\+\+DAC\+\_\+\+Init}} (\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$Dac\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Инициализация ЦАП \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__dac_8c_a2d2f05f64751618a29e6d7e3d97f42f9_a2d2f05f64751618a29e6d7e3d97f42f9}{HAL\+\_\+\+DAC\+\_\+\+Enable}} (\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$Dac\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Включение ЦАП \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__dac_8c_a6eaa48b72384d10bd368d44552ae5a6c_a6eaa48b72384d10bd368d44552ae5a6c}{HAL\+\_\+\+DAC\+\_\+\+Disable}} (\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$Dac\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Выключение ЦАП \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__dac_8c_a3ba9f10a5d58b39eb9f5da717e75445a_a3ba9f10a5d58b39eb9f5da717e75445a}{HAL\+\_\+\+DAC\+\_\+\+Set\+Value}} (\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$Dac\+Type\+Def, uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Установка уровня выходного уровня ЦАП \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{hal__dac_8c_a6fbb7e74e06f5b73a17aa1c48f7985bb_a6fbb7e74e06f5b73a17aa1c48f7985bb}\label{hal__dac_8c_a6fbb7e74e06f5b73a17aa1c48f7985bb_a6fbb7e74e06f5b73a17aa1c48f7985bb}} 
+\index{hal\_dac.c@{hal\_dac.c}!HAL\_DAC\_Init@{HAL\_DAC\_Init}}
+\index{HAL\_DAC\_Init@{HAL\_DAC\_Init}!hal\_dac.c@{hal\_dac.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DAC\_Init()}{HAL\_DAC\_Init()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DAC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$}]{hdac }\end{DoxyParamCaption})}
+
+
+
+Инициализация ЦАП 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdac} & -\/ Экземпляр обработчкиа ЦАП \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dac_8c_source}{hal\+\_\+dac.\+c}} строка \mbox{\hyperlink{hal__dac_8c_source_l00004}{4}}
+
+\mbox{\Hypertarget{hal__dac_8c_a2d2f05f64751618a29e6d7e3d97f42f9_a2d2f05f64751618a29e6d7e3d97f42f9}\label{hal__dac_8c_a2d2f05f64751618a29e6d7e3d97f42f9_a2d2f05f64751618a29e6d7e3d97f42f9}} 
+\index{hal\_dac.c@{hal\_dac.c}!HAL\_DAC\_Enable@{HAL\_DAC\_Enable}}
+\index{HAL\_DAC\_Enable@{HAL\_DAC\_Enable}!hal\_dac.c@{hal\_dac.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DAC\_Enable()}{HAL\_DAC\_Enable()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DAC\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$}]{hdac }\end{DoxyParamCaption})}
+
+
+
+Включение ЦАП 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdac} & -\/ Экземпляр обработчкиа ЦАП \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dac_8c_source}{hal\+\_\+dac.\+c}} строка \mbox{\hyperlink{hal__dac_8c_source_l00011}{11}}
+
+\mbox{\Hypertarget{hal__dac_8c_a6eaa48b72384d10bd368d44552ae5a6c_a6eaa48b72384d10bd368d44552ae5a6c}\label{hal__dac_8c_a6eaa48b72384d10bd368d44552ae5a6c_a6eaa48b72384d10bd368d44552ae5a6c}} 
+\index{hal\_dac.c@{hal\_dac.c}!HAL\_DAC\_Disable@{HAL\_DAC\_Disable}}
+\index{HAL\_DAC\_Disable@{HAL\_DAC\_Disable}!hal\_dac.c@{hal\_dac.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DAC\_Disable()}{HAL\_DAC\_Disable()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DAC\+\_\+\+Disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$}]{hdac }\end{DoxyParamCaption})}
+
+
+
+Выключение ЦАП 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdac} & -\/ Экземпляр обработчкиа ЦАП \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dac_8c_source}{hal\+\_\+dac.\+c}} строка \mbox{\hyperlink{hal__dac_8c_source_l00018}{18}}
+
+\mbox{\Hypertarget{hal__dac_8c_a3ba9f10a5d58b39eb9f5da717e75445a_a3ba9f10a5d58b39eb9f5da717e75445a}\label{hal__dac_8c_a3ba9f10a5d58b39eb9f5da717e75445a_a3ba9f10a5d58b39eb9f5da717e75445a}} 
+\index{hal\_dac.c@{hal\_dac.c}!HAL\_DAC\_SetValue@{HAL\_DAC\_SetValue}}
+\index{HAL\_DAC\_SetValue@{HAL\_DAC\_SetValue}!hal\_dac.c@{hal\_dac.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DAC\_SetValue()}{HAL\_DAC\_SetValue()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DAC\+\_\+\+Set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\+\_\+\+DAC\+\_\+\+Type\+Def}} $\ast$}]{hdac,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Установка уровня выходного уровня ЦАП 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdac} & -\/ Экземпляр обработчкиа ЦАП \\
+\hline
+{\em value} & -\/ 12-\/битное значение уровня \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dac_8c_source}{hal\+\_\+dac.\+c}} строка \mbox{\hyperlink{hal__dac_8c_source_l00025}{25}}
+

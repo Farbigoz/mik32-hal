@@ -22,8 +22,7 @@ void InitTimer() {
 
 
 void InitGpio() {
-	__HAL_GPIO_CONFIGURE(LedPin, GPIO_1, HAL_GPIO_PIN_0, HAL_PIN_TYPE_IO, HAL_PIN_MODE_OUTPUT);
-	HAL_GPIO_Init(&LedPin);
+	HAL_GPIO_ConfigInit(&LedPin, GPIO_1, HAL_GPIO_PIN_0, HAL_PIN_TYPE_IO, HAL_PIN_MODE_OUTPUT);
 }
 
 

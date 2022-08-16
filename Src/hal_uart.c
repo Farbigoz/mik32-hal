@@ -1,7 +1,8 @@
 #include "../Inc/hal_uart.h"
 
-
-
+/**
+ * @brief	Режим передачи
+ */
 void HAL_UART_Init(HAL_UART_HandleTypeDef *UartTypeDef) {
 	// Init UART clock
 	if (UartTypeDef->Instance == UART_0)
@@ -24,41 +25,17 @@ void HAL_UART_Init(HAL_UART_HandleTypeDef *UartTypeDef) {
 	// Init.BaudRate
 	UartTypeDef->Instance->DIVIDER = (CPU_CLOCK_MHZ*1000*1000) / UartTypeDef->Init.BaudRate;
 
-	// Init.TxRxEnable
-	if (UartTypeDef->Init.TxRxEnable == UART_TX_RX_ENABLE)
-	{
-		UartTypeDef->Instance->CONTROL1 |= UART_CONTROL1_RE_M | UART_CONTROL1_TE_M;
-	}
-	else if (UartTypeDef->Init.TxRxEnable == UART_ONLY_TX_ENABLE)
-	{
-		UartTypeDef->Instance->CONTROL1 |= UART_CONTROL1_TE_M;
-	}
-	else if (UartTypeDef->Init.TxRxEnable == UART_ONLY_RX_ENABLE)
-	{
-		UartTypeDef->Instance->CONTROL1 |= UART_CONTROL1_RE_M;
-	}
+	UartTypeDef->Instance->CONTROL1 |= UartTypeDef->Init.TxState;
+	UartTypeDef->Instance->CONTROL1 |= UartTypeDef->Init.RxState;
 
-	// Init.TxPolarityInvert
-	if (UartTypeDef->Init.TxPolarityInvert == UART_TX_PIN_INVERT) {
-		UartTypeDef->Instance->CONTROL2 |= UART_CONTROL2_TXINV_M;
-	}
+	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.TxPolarityInvert;
+	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.RxPolarityInvert;
 
-	// Init.RxPolarityInvert
-	if (UartTypeDef->Init.RxPolarityInvert == UART_RX_PIN_INVERT) {
-		UartTypeDef->Instance->CONTROL2 |= UART_CONTROL2_RXINV_M;
-	}
+	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.DataPinSwap;
 
-	// Init.TxRxSwap
-	if (UartTypeDef->Init.TxRxSwap == UART_TX_RX_PIN_SWAP) {
-		UartTypeDef->Instance->CONTROL2 |= UART_CONTROL2_SWAP_M;
-	}
+	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.Mode;
 
-	// Init.SyncMode
-	if (UartTypeDef->Init.SyncMode == UART_MODE_SYNC) {
-		UartTypeDef->Instance->CONTROL2 |= UART_CONTROL2_CLKEN_M;
-	}
-
-	// Enable uart
+	// Enable
 	UartTypeDef->Instance->CONTROL1 |= 1 << UART_CONTROL1_UE_S;
 
 	// Wait to enable

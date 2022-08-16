@@ -12,52 +12,83 @@ extern "C" {
 #include "hal_dma.h"
 
 
+
+/**
+ * @brief	Режим передачи
+ */
 typedef enum {
-	UART_TX_RX_ENABLE,
-	UART_ONLY_TX_ENABLE,
-	UART_ONLY_RX_ENABLE,
-} HAL_UART_TxRxEnable;
+	HAL_UART_TX_DISABLE	= 0x0 << UART_CONTROL1_TE_S,		///< Передача отключена
+	HAL_UART_TX_ENABLE	= 0x1 << UART_CONTROL1_TE_S,		///< Передача включена
+} HAL_UART_TxState;
 
 
+/**
+ * @brief	Режим приёма
+ */
 typedef enum {
-	UART_TX_PIN_NORMAL,
-	UART_TX_PIN_INVERT
-} HAL_UART_TxPolarityInvert;
+	HAL_UART_RX_DISABLE	= 0x0 << UART_CONTROL1_RE_S,		///< Приём отключён
+	HAL_UART_RX_ENABLE	= 0x1 << UART_CONTROL1_RE_S,		///< Приём включён
+} HAL_UART_RxState;
 
 
+/**
+ * @brief	Полярность пина передачи
+ */
 typedef enum {
-	UART_RX_PIN_NORMAL,
-	UART_RX_PIN_INVERT
-} HAL_UART_RxPolarityInvert;
+	HAL_UART_TX_PIN_NORMAL = 0x0 << UART_CONTROL2_TXINV_S,	///< Нормальная полярность
+	HAL_UART_TX_PIN_INVERT = 0x1 << UART_CONTROL2_TXINV_S,	///< Инвертированная полярность
+} HAL_UART_TxPolarity;
 
 
+/**
+ * @brief	Полярность пина приёма
+ */
 typedef enum {
-	UART_TX_RX_PIN_NORMAL,
-	UART_TX_RX_PIN_SWAP			// TX = RX, RX = TX
-} HAL_UART_TxRxPinSwap;
+	HAL_UART_RX_PIN_NORMAL = 0x0 << UART_CONTROL2_RXINV_S,	///< Нормальная полярность
+	HAL_UART_RX_PIN_INVERT = 0x1 << UART_CONTROL2_RXINV_S,	///< Инвертированная полярность
+} HAL_UART_RxPolarity;
 
 
+/**
+ * @brief	Смена назначения пинов приёма и передачи
+ */
 typedef enum {
-	UART_MODE_ASYNC,
-	UART_MODE_SYNC
-} HAL_UART_SyncMode;
+	HAL_UART_DATA_PIN_NORMAL = 0x0 << UART_CONTROL2_SWAP_S,	///< Нормальное состояние
+	HAL_UART_DATA_PIN_SWAP	 = 0x1 << UART_CONTROL2_SWAP_S,	///< TX => RX, RX => TX
+} HAL_UART_DataPinSwap;
 
 
+/**
+ * @brief	Режим работы UART
+ */
+typedef enum {
+	HAL_UART_MODE_ASYNC	= 0x0 << UART_CONTROL2_CLKEN_S,		///< Асинхронный
+	HAL_UART_MODE_SYNC	= 0x1 << UART_CONTROL2_CLKEN_S,		///< Синхронный
+} HAL_UART_Mode;
+
+
+/**
+ * @brief	Объявление структуры инициализации UART
+ */
 typedef struct {
-	uint32_t					BaudRate;
+	uint32_t				BaudRate;			///< БОД-овая скорость UART
 
-	HAL_UART_TxRxEnable			TxRxEnable;
+	HAL_UART_TxState		TxState;			///< Режим передачи
+	HAL_UART_RxState		RxState;			///< Режим приёма
 
-	HAL_UART_TxPolarityInvert	TxPolarityInvert;
-	HAL_UART_RxPolarityInvert	RxPolarityInvert;
+	HAL_UART_TxPolarity		TxPolarityInvert;	///< Полярность пина передачи
+	HAL_UART_RxPolarity		RxPolarityInvert;	///< Полярность пина приёма
 
-	HAL_UART_TxRxPinSwap		TxRxSwap;
+	HAL_UART_DataPinSwap	DataPinSwap;		///< Смена пинов передачи и приёма местами
 
-	HAL_UART_SyncMode			SyncMode;
+	HAL_UART_Mode			Mode;				///< Режим работы UART
 
 } HAL_UART_InitTypeDef;
 
 
+/**
+ * @brief	Объявление структуры состояния UART
+ */
 typedef struct {
 	__RW uint32_t		RxParityBitError	:1;			// PE
 	__RW uint32_t		RxStopBitError		:1;			// FE
@@ -79,44 +110,106 @@ typedef struct {
 } HAL_UART_StateTypeDef;
 
 
+/**
+ * @brief	Объявление структуры обработчика UART
+ */
 typedef struct {
-	UART_TypeDef			*Instance;
+	UART_TypeDef			*Instance;		///< Экземпляр UART
 
-	HAL_UART_InitTypeDef	Init;
+	HAL_UART_InitTypeDef	Init;			///< Структура инициализация UART
 
-	HAL_UART_StateTypeDef	*State;
+	HAL_UART_StateTypeDef	*State;			///< Указатель на структуру состояния UART
 
-	__WO uint32_t			*TxBuffPtr;
-	__RO uint32_t			*RxBuffPtr;
+	__WO uint32_t			*TxBuffPtr;		///< Указатель на буфер отправки
+	__RO uint32_t			*RxBuffPtr;		///< Указатель на буфер приёма
 
-	HAL_DMA_TypeDef			*TxDma;
-	HAL_DMA_TypeDef			*RxDma;
-
-	// dma
+	HAL_DMA_TypeDef			*TxDma;			///< Экземпляр обработчкика DMA на отправку
+	HAL_DMA_TypeDef			*RxDma;			///< Экземпляр обработчкика DMA на приём
 } HAL_UART_HandleTypeDef;
 
 
-void HAL_UART_Init(HAL_UART_HandleTypeDef *UartTypeDef);
+/**
+ * @brief	Инициализация UART
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ */
+void HAL_UART_Init(HAL_UART_HandleTypeDef *huart);
 
 
-void HAL_UART_SetTxDma(HAL_UART_HandleTypeDef *UartTypeDef, HAL_DMA_TypeDef *DmaTypeDef);
-
-void HAL_UART_SetRxDma(HAL_UART_HandleTypeDef *UartTypeDef, HAL_DMA_TypeDef *DmaTypeDef);
-
-
-void HAL_UART_TransmitByte(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData);
-
-void HAL_UART_ReceiveByte(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData);
-
-
-void HAL_UART_Transmit(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
-
-void HAL_UART_Receive(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
+/**
+ * @brief	Установка DMA на передачу
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	hdma  - Экземпляр обработчкиа DMA
+ */
+void HAL_UART_SetTxDma(HAL_UART_HandleTypeDef *huart, HAL_DMA_TypeDef *hdma);
 
 
-HAL_StatusTypeDef HAL_UART_Transmit_DMA(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
+/**
+ * @brief	Установка DMA на приём
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	hdma  - Экземпляр обработчкиа DMA
+ */
+void HAL_UART_SetRxDma(HAL_UART_HandleTypeDef *huart, HAL_DMA_TypeDef *hdma);
 
-HAL_StatusTypeDef HAL_UART_Receive_DMA(HAL_UART_HandleTypeDef *UartTypeDef, uint8_t *pData, uint16_t Size);
+
+/**
+ * @brief	Отправка байта в UART
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель на байт
+ */
+void HAL_UART_TransmitByte(HAL_UART_HandleTypeDef *huart, uint8_t *pData);
+
+
+/**
+ * @brief	Чтение байта из UART
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель для записи байта
+ */
+void HAL_UART_ReceiveByte(HAL_UART_HandleTypeDef *huart, uint8_t *pData);
+
+
+/**
+ * @brief	Отправка в UART
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель на буфер
+ * @param	size  - Размер буфера
+ */
+void HAL_UART_Transmit(HAL_UART_HandleTypeDef *huart, uint8_t *pData, uint16_t size);
+
+
+/**
+ * @brief	Чтение из UART
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель на буфер
+ * @param	size  - Размер буфера
+ */
+void HAL_UART_Receive(HAL_UART_HandleTypeDef *huart, uint8_t *pData, uint16_t size);
+
+
+/**
+ * @brief	Отправка в UART через DMA
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель на буфер
+ * @param	size  - Размер буфера
+ */
+HAL_StatusTypeDef HAL_UART_Transmit_DMA(HAL_UART_HandleTypeDef *huart, uint8_t *pData, uint16_t size);
+
+
+/**
+ * @brief	Чтение из UART через DMA
+ *
+ * @param	huart - Экземпляр обработчкиа UART
+ * @param	pData - Указатель на буфер
+ * @param	size  - Размер буфера
+ */
+HAL_StatusTypeDef HAL_UART_Receive_DMA(HAL_UART_HandleTypeDef *huart, uint8_t *pData, uint16_t size);
 
 
 #ifdef __cplusplus

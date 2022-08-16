@@ -1,0 +1,85 @@
+\hypertarget{hal_8c}{}\doxysection{Файл D\+:/repos/untitled/lib/mik32-\/hal/\+Src/hal.c}
+\label{hal_8c}\index{D:/repos/untitled/lib/mik32-\/hal/Src/hal.c@{D:/repos/untitled/lib/mik32-\/hal/Src/hal.c}}
+{\ttfamily \#include \char`\"{}../\+Inc/hal.\+h\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hal_8c_a958d81eba463d1e689d651afd25117b1_a958d81eba463d1e689d651afd25117b1}{\+\_\+\+\_\+div64\+\_\+32}} (uint64\+\_\+t rem, uint32\+\_\+t base)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hal_8c_a618b04f5f68ba8780e50898d75dda954_a618b04f5f68ba8780e50898d75dda954}{HAL\+\_\+\+Get\+Cpu\+Clock}} (void)
+\item 
+\mbox{\hyperlink{hal_8c_af9aace1b44b73111e15aa39f06f43456_af9aace1b44b73111e15aa39f06f43456}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((weak))
+\begin{DoxyCompactList}\small\item\em Получение текущего значения счётчика ядра микропроцессора \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal_8c_aa1851a7caac94c5a8ff90e6f5f993433_aa1851a7caac94c5a8ff90e6f5f993433}{HAL\+\_\+\+Init\+Clock}} ()
+\begin{DoxyCompactList}\small\item\em Инициализация ядра микропроцессора \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{hal_8c_a958d81eba463d1e689d651afd25117b1_a958d81eba463d1e689d651afd25117b1}\label{hal_8c_a958d81eba463d1e689d651afd25117b1_a958d81eba463d1e689d651afd25117b1}} 
+\index{hal.c@{hal.c}!\_\_div64\_32@{\_\_div64\_32}}
+\index{\_\_div64\_32@{\_\_div64\_32}!hal.c@{hal.c}}
+\doxysubsubsection{\texorpdfstring{\_\_div64\_32()}{\_\_div64\_32()}}
+{\footnotesize\ttfamily uint64\+\_\+t \+\_\+\+\_\+div64\+\_\+32 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{rem,  }\item[{uint32\+\_\+t}]{base }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{hal_8c_source}{hal.\+c}} строка \mbox{\hyperlink{hal_8c_source_l00004}{4}}
+
+\mbox{\Hypertarget{hal_8c_a618b04f5f68ba8780e50898d75dda954_a618b04f5f68ba8780e50898d75dda954}\label{hal_8c_a618b04f5f68ba8780e50898d75dda954_a618b04f5f68ba8780e50898d75dda954}} 
+\index{hal.c@{hal.c}!HAL\_GetCpuClock@{HAL\_GetCpuClock}}
+\index{HAL\_GetCpuClock@{HAL\_GetCpuClock}!hal.c@{hal.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GetCpuClock()}{HAL\_GetCpuClock()}}
+{\footnotesize\ttfamily uint64\+\_\+t HAL\+\_\+\+Get\+Cpu\+Clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{hal_8c_source}{hal.\+c}} строка \mbox{\hyperlink{hal_8c_source_l00037}{37}}
+
+\mbox{\Hypertarget{hal_8c_af9aace1b44b73111e15aa39f06f43456_af9aace1b44b73111e15aa39f06f43456}\label{hal_8c_af9aace1b44b73111e15aa39f06f43456_af9aace1b44b73111e15aa39f06f43456}} 
+\index{hal.c@{hal.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!hal.c@{hal.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(weak)}]{ }\end{DoxyParamCaption})}
+
+
+
+Получение текущего значения счётчика ядра микропроцессора 
+
+Блокирующая задержка
+
+Получение времени работы микропроцессора в микросекундах
+
+Получение времени работы микропроцессора в милисекундах
+
+\begin{DoxyReturn}{Возвращает}
+uint64\+\_\+t -\/ Значение счётчика
+
+uint32\+\_\+t -\/ Время работы микропроцессора в мс
+
+uint32\+\_\+t -\/ Время работы микропроцессора в мкс
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em Delay\+Ms} & -\/ Задержка в мс\\
+\hline
+{\em Delay\+Ms} & -\/ Задержка в мкс \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal_8c_source}{hal.\+c}} строка \mbox{\hyperlink{hal_8c_source_l00043}{43}}
+
+\mbox{\Hypertarget{hal_8c_aa1851a7caac94c5a8ff90e6f5f993433_aa1851a7caac94c5a8ff90e6f5f993433}\label{hal_8c_aa1851a7caac94c5a8ff90e6f5f993433_aa1851a7caac94c5a8ff90e6f5f993433}} 
+\index{hal.c@{hal.c}!HAL\_InitClock@{HAL\_InitClock}}
+\index{HAL\_InitClock@{HAL\_InitClock}!hal.c@{hal.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_InitClock()}{HAL\_InitClock()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+Init\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Инициализация ядра микропроцессора 
+
+
+
+См. определение в файле \mbox{\hyperlink{hal_8c_source}{hal.\+c}} строка \mbox{\hyperlink{hal_8c_source_l00073}{73}}
+

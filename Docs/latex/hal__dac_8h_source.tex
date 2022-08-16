@@ -1,0 +1,90 @@
+\hypertarget{hal__dac_8h_source}{}\doxysection{hal\+\_\+dac.\+h}
+\label{hal__dac_8h_source}\index{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_dac.h@{D:/repos/untitled/lib/mik32-\/hal/Inc/hal\_dac.h}}
+\mbox{\hyperlink{hal__dac_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef HAL\_DAC\_H}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00002}00002 \textcolor{preprocessor}{\#define HAL\_DAC\_H}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00005}00005 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00006}00006 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <analog\_reg.h>}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{hal_8h}{hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00011}00011 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00012}00012 \textcolor{comment}{/// Экземпляр ЦАП исходя из перечисления 'HAL\_DAC\_Channel'}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00013}\mbox{\hyperlink{hal__dac_8h_a09b5875fa9456d5d3e10f79c08858e74_a09b5875fa9456d5d3e10f79c08858e74}{00013}} \textcolor{comment}{}\textcolor{preprocessor}{\#define \_\_HAL\_DAC\_INSTANCE\_FROM\_CHANNEL(channel)    ((channel == HAL\_DAC\_CHANNEL\_1) ? (\&ANALOG\_REG-\/>DAC0) : (\&ANALOG\_REG-\/>DAC1))}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00015}00015 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00016}00016 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00017}00017 \textcolor{comment}{* @brief    Каналы ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00018}00018 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00019}\mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4}{00019}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00020}\mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4aad371f86798c0375690f7ef801d54f3f}{00020}}     \mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4aad371f86798c0375690f7ef801d54f3f}{HAL\_DAC\_CHANNEL\_1}},}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00021}\mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4ad6482b1a605fc6b7ca74beef06aa1d7e}{00021}}     \mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4ad6482b1a605fc6b7ca74beef06aa1d7e}{HAL\_DAC\_CHANNEL\_2}},}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00022}00022 \} \mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4}{HAL\_DAC\_Channel}};}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00025}00025 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00026}00026 \textcolor{comment}{ * @brief   Опорное напряжение ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00027}00027 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00028}\mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0f}{00028}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00029}\mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0facf0746b0b22e21e11c13ba299220ed14}{00029}}     \mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0facf0746b0b22e21e11c13ba299220ed14}{HAL\_DAC\_REF\_INTERNAL}}    = (0 << DAC\_CFG\_EXTEN\_S),       \textcolor{comment}{///< Внутреннее опорное напряжение}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00030}\mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0faa59091cfe87793186cab2c2372a76a80}{00030}}     \mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0faa59091cfe87793186cab2c2372a76a80}{HAL\_DAC\_REF\_EXTERNAL}}    = (11 << DAC\_CFG\_EXTEN\_S),      \textcolor{comment}{///< Внешнее опорное напряжение}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00031}00031 \} \mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0f}{HAL\_DAC\_RefSource}};}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00033}00033 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00034}00034 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00035}00035 \textcolor{comment}{ * @brief   Объявление структуры обработчкиа ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00036}00036 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00037}\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{00037}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00038}\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_aa016ea5797054cdc76a041c5b2e635f2_aa016ea5797054cdc76a041c5b2e635f2}{00038}}     \mbox{\hyperlink{hal__dac_8h_a7af93e566b3491124a928be6b972eda4_a7af93e566b3491124a928be6b972eda4}{HAL\_DAC\_Channel}}      \mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_aa016ea5797054cdc76a041c5b2e635f2_aa016ea5797054cdc76a041c5b2e635f2}{Channel}};     \textcolor{comment}{///< Канал}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00040}\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_a36740a3ad0ab6320b9e5713e83c5d04d_a36740a3ad0ab6320b9e5713e83c5d04d}{00040}}     \mbox{\hyperlink{hal__dac_8h_a0e5e6032d66e6d96ff0d761cf8b87c0f_a0e5e6032d66e6d96ff0d761cf8b87c0f}{HAL\_DAC\_RefSource}}  \mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_a36740a3ad0ab6320b9e5713e83c5d04d_a36740a3ad0ab6320b9e5713e83c5d04d}{Ref}};         \textcolor{comment}{///< Опорное напряжение}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00042}\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_a1afbf7131ef16e7e52be7760947ed06c_a1afbf7131ef16e7e52be7760947ed06c}{00042}}     uint8\_t             \mbox{\hyperlink{struct_h_a_l___d_a_c___type_def_a1afbf7131ef16e7e52be7760947ed06c_a1afbf7131ef16e7e52be7760947ed06c}{FreqDivider}}; \textcolor{comment}{///< Делитель тактового сигнала}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00043}00043 \} \mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\_DAC\_TypeDef}};}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00045}00045 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00046}00046 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00047}00047 \textcolor{comment}{ * @brief   Инициализация ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00048}00048 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00049}00049 \textcolor{comment}{ * @param   hdac -\/ Экземпляр обработчкиа ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00050}00050 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00051}\mbox{\hyperlink{hal__dac_8h_ac125a47a7e9f4164b99abd6880de6465_ac125a47a7e9f4164b99abd6880de6465}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dac_8h_ac125a47a7e9f4164b99abd6880de6465_ac125a47a7e9f4164b99abd6880de6465}{HAL\_DAC\_Init}}(\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\_DAC\_TypeDef}} *hdac);}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00053}00053 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00054}00054 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00055}00055 \textcolor{comment}{ * @brief   Включение ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00056}00056 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00057}00057 \textcolor{comment}{ * @param   hdac -\/ Экземпляр обработчкиа ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00058}00058 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00059}\mbox{\hyperlink{hal__dac_8h_a1e19081d1e9dea4f07b20a33f25761fb_a1e19081d1e9dea4f07b20a33f25761fb}{00059}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dac_8h_a1e19081d1e9dea4f07b20a33f25761fb_a1e19081d1e9dea4f07b20a33f25761fb}{HAL\_DAC\_Enable}}(\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\_DAC\_TypeDef}} *hdac);}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00061}00061 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00062}00062 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00063}00063 \textcolor{comment}{ * @brief   Выключение ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00064}00064 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00065}00065 \textcolor{comment}{ * @param   hdac -\/ Экземпляр обработчкиа ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00066}00066 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00067}\mbox{\hyperlink{hal__dac_8h_a2b866fbc1dc8f34aeea66972444ea51f_a2b866fbc1dc8f34aeea66972444ea51f}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dac_8h_a2b866fbc1dc8f34aeea66972444ea51f_a2b866fbc1dc8f34aeea66972444ea51f}{HAL\_DAC\_Disable}}(\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\_DAC\_TypeDef}} *hdac);}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00069}00069 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00070}00070 \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00071}00071 \textcolor{comment}{ * @brief   Установка уровня выходного уровня ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00072}00072 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00073}00073 \textcolor{comment}{ * @param   hdac -\/ Экземпляр обработчкиа ЦАП}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00074}00074 \textcolor{comment}{ * @param   value -\/ 12-\/битное значение уровня}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00075}00075 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00076}\mbox{\hyperlink{hal__dac_8h_a521506b8520bbf806269b1ee009b01f4_a521506b8520bbf806269b1ee009b01f4}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{hal__dac_8h_a521506b8520bbf806269b1ee009b01f4_a521506b8520bbf806269b1ee009b01f4}{HAL\_DAC\_SetValue}}(\mbox{\hyperlink{struct_h_a_l___d_a_c___type_def}{HAL\_DAC\_TypeDef}} *hdac, uint16\_t value);}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00079}00079 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00081}00081 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{hal__dac_8h_source_l00084}00084 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

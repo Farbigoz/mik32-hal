@@ -1,0 +1,138 @@
+\hypertarget{hal__dma_8c}{}\doxysection{Файл D\+:/repos/untitled/lib/mik32-\/hal/\+Src/hal\+\_\+dma.c}
+\label{hal__dma_8c}\index{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dma.c@{D:/repos/untitled/lib/mik32-\/hal/Src/hal\_dma.c}}
+{\ttfamily \#include \char`\"{}../\+Inc/hal\+\_\+dma.\+h\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hal__dma_8c_a0be38bf2802119ccd72d1bed735e585e_a0be38bf2802119ccd72d1bed735e585e}{HAL\+\_\+\+DMA\+\_\+\+Base\+Init}} (\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$Dma\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Базовая инициализация DMA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__dma_8c_acc9e5243338ebebfd684d80b6009ef26_acc9e5243338ebebfd684d80b6009ef26}{HAL\+\_\+\+DMA\+\_\+\+Init}} (\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$Dma\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Инициализация DMA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__dma_8c_a32090b355b008d771a3b7a0046f09db0_a32090b355b008d771a3b7a0046f09db0}{HAL\+\_\+\+DMA\+\_\+\+Enable}} (\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$Dma\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Включение DMA. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hal__dma_8c_adb570714921d287bb0adbc38b4a6ecc6_adb570714921d287bb0adbc38b4a6ecc6}{HAL\+\_\+\+DMA\+\_\+\+Ready}} (\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$Dma\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Свободен ли DMA. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hal__dma_8c_a208a4b2367f4d6ad03dcd8bf407c2519_a208a4b2367f4d6ad03dcd8bf407c2519}{HAL\+\_\+\+DMA\+\_\+\+Busy}} (\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$Dma\+Type\+Def)
+\begin{DoxyCompactList}\small\item\em Занят ли DMA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}{\+\_\+\+\_\+default\+Buff}} \mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}xff\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{hal__dma_8c_a0be38bf2802119ccd72d1bed735e585e_a0be38bf2802119ccd72d1bed735e585e}\label{hal__dma_8c_a0be38bf2802119ccd72d1bed735e585e_a0be38bf2802119ccd72d1bed735e585e}} 
+\index{hal\_dma.c@{hal\_dma.c}!HAL\_DMA\_BaseInit@{HAL\_DMA\_BaseInit}}
+\index{HAL\_DMA\_BaseInit@{HAL\_DMA\_BaseInit}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DMA\_BaseInit()}{HAL\_DMA\_BaseInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DMA\+\_\+\+Base\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$}]{hdma }\end{DoxyParamCaption})}
+
+
+
+Базовая инициализация DMA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdma} & -\/ Экземпляр обработчкиа DMA \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00007}{7}}
+
+\mbox{\Hypertarget{hal__dma_8c_acc9e5243338ebebfd684d80b6009ef26_acc9e5243338ebebfd684d80b6009ef26}\label{hal__dma_8c_acc9e5243338ebebfd684d80b6009ef26_acc9e5243338ebebfd684d80b6009ef26}} 
+\index{hal\_dma.c@{hal\_dma.c}!HAL\_DMA\_Init@{HAL\_DMA\_Init}}
+\index{HAL\_DMA\_Init@{HAL\_DMA\_Init}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DMA\_Init()}{HAL\_DMA\_Init()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DMA\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$}]{hdma }\end{DoxyParamCaption})}
+
+
+
+Инициализация DMA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdma} & -\/ Экземпляр обработчкиа DMA \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00020}{20}}
+
+\mbox{\Hypertarget{hal__dma_8c_a32090b355b008d771a3b7a0046f09db0_a32090b355b008d771a3b7a0046f09db0}\label{hal__dma_8c_a32090b355b008d771a3b7a0046f09db0_a32090b355b008d771a3b7a0046f09db0}} 
+\index{hal\_dma.c@{hal\_dma.c}!HAL\_DMA\_Enable@{HAL\_DMA\_Enable}}
+\index{HAL\_DMA\_Enable@{HAL\_DMA\_Enable}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DMA\_Enable()}{HAL\_DMA\_Enable()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+DMA\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$}]{hdma }\end{DoxyParamCaption})}
+
+
+
+Включение DMA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdma} & -\/ Экземпляр обработчкиа DMA \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00051}{51}}
+
+\mbox{\Hypertarget{hal__dma_8c_adb570714921d287bb0adbc38b4a6ecc6_adb570714921d287bb0adbc38b4a6ecc6}\label{hal__dma_8c_adb570714921d287bb0adbc38b4a6ecc6_adb570714921d287bb0adbc38b4a6ecc6}} 
+\index{hal\_dma.c@{hal\_dma.c}!HAL\_DMA\_Ready@{HAL\_DMA\_Ready}}
+\index{HAL\_DMA\_Ready@{HAL\_DMA\_Ready}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DMA\_Ready()}{HAL\_DMA\_Ready()}}
+{\footnotesize\ttfamily bool HAL\+\_\+\+DMA\+\_\+\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$}]{hdma }\end{DoxyParamCaption})}
+
+
+
+Свободен ли DMA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdma} & -\/ Экземпляр обработчкиа DMA\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00062}{62}}
+
+\mbox{\Hypertarget{hal__dma_8c_a208a4b2367f4d6ad03dcd8bf407c2519_a208a4b2367f4d6ad03dcd8bf407c2519}\label{hal__dma_8c_a208a4b2367f4d6ad03dcd8bf407c2519_a208a4b2367f4d6ad03dcd8bf407c2519}} 
+\index{hal\_dma.c@{hal\_dma.c}!HAL\_DMA\_Busy@{HAL\_DMA\_Busy}}
+\index{HAL\_DMA\_Busy@{HAL\_DMA\_Busy}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_DMA\_Busy()}{HAL\_DMA\_Busy()}}
+{\footnotesize\ttfamily bool HAL\+\_\+\+DMA\+\_\+\+Busy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_l___d_m_a___type_def}{HAL\+\_\+\+DMA\+\_\+\+Type\+Def}} $\ast$}]{hdma }\end{DoxyParamCaption})}
+
+
+
+Занят ли DMA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hdma} & -\/ Экземпляр обработчкиа DMA\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00067}{67}}
+
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}\label{hal__dma_8c_af89447d6278777813f566dca5b0595b3_af89447d6278777813f566dca5b0595b3}} 
+\index{hal\_dma.c@{hal\_dma.c}!\_\_defaultBuff@{\_\_defaultBuff}}
+\index{\_\_defaultBuff@{\_\_defaultBuff}!hal\_dma.c@{hal\_dma.c}}
+\doxysubsubsection{\texorpdfstring{\_\_defaultBuff}{\_\_defaultBuff}}
+{\footnotesize\ttfamily const uint8\+\_\+t \+\_\+\+\_\+default\+Buff\mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}xff\char`\"{}}
+
+
+
+См. определение в файле \mbox{\hyperlink{hal__dma_8c_source}{hal\+\_\+dma.\+c}} строка \mbox{\hyperlink{hal__dma_8c_source_l00004}{4}}
+
