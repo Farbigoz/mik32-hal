@@ -36,14 +36,14 @@ void HAL_TIMER32_Init(HAL_TIMER32_TypeDef *htim) {
 	htim->Instance->IntMask = 0x0;
 	htim->Instance->IntClear = 0xffffffff;
 
-	//htim->Instance->IntMask = htim->Init.Interrupt;
+	htim->Instance->IntMask = htim->Init.Interrupt;
 	enableEpicInterrupt = htim->Init.Interrupt != HAL_TIMER32_INTERRUPT_NONE;
 
 	for (uint8_t i = 0; i < TIMER32_CHANNEL_COUNT; i++) {
 		htim->Instance->Channels[i].Control = 0x0;
 		htim->Instance->Channels[i].Control |= htim->Channel[i].Mode << TIMER32_CH_CONTROL_MODE_S;
 
-		//htim->Instance->IntMask |= htim->Channel[i].Interrupt << i;
+		htim->Instance->IntMask |= htim->Channel[i].Interrupt << i;
 		enableEpicInterrupt |= htim->Channel[i].Interrupt != HAL_TIMER32_CHANNEL_INTERRUPT_NONE;
 
 		switch (htim->Channel[i].Mode) {
