@@ -2,8 +2,11 @@
 
 
 void HAL_DAC_Init(HAL_DAC_TypeDef *DacTypeDef) {
-	volatile DAC_TypeDef *dacInstance = __HAL_DAC_INSTANCE_FROM_CHANNEL(DacTypeDef->Channel);
+	volatile DAC_TypeDef *dacInstance;
 
+	PM->CLK_APB_P_SET |= 1 << 15;
+
+	dacInstance = __HAL_DAC_INSTANCE_FROM_CHANNEL(DacTypeDef->Channel);
 	dacInstance->CFG = DAC_CFG_RESN_M | DacTypeDef->Ref | DAC_CFG_DIV(DacTypeDef->FreqDivider);
 }
 
