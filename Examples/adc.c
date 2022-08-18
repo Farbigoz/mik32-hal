@@ -56,6 +56,7 @@ int main() {
 	InitUart();
 	InitGpio();
 
+	HAL_ADC_Enable(&hadc);
 	HAL_ADC_Start_Continuous(&hadc);
 
 	char sendBuff[10] = {0};
