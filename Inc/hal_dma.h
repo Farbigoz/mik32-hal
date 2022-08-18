@@ -10,14 +10,20 @@ extern "C" {
 #include "hal.h"
 
 
+// Конфигурация по-умолчанию для DMA
+//	Размер считыванемых данных - байт
+//	Размер записываемых данных - байт
+//	Число считываемых байт за раз - 2^0
+//	Число записываемых байт за раз - 2^0
+//	Разрешение работы логики с откликом для адресата источника
+//	Разрешение работы логики с откликом для адресата назначения
 #define __DMA_CFG_DEFAULT_FIELDS	(											\
 										DMA_CFG_CH_READ_SIZE_byte_M			|	\
 										DMA_CFG_CH_WRITE_SIZE_byte_M		|	\
 										0 << DMA_CFG_CH_READ_BURST_SIZE_S	|	\
 										0 << DMA_CFG_CH_WRITE_BURST_SIZE_S	|	\
 										DMA_CFG_CH_ACK_READ_M				|	\
-										DMA_CFG_CH_ACK_WRITE_M				|	\
-										DMA_CFG_CH_EN_IRQ_M						\
+										DMA_CFG_CH_ACK_WRITE_M					\
 									)
 
 
@@ -81,6 +87,15 @@ typedef enum {
 
 
 /**
+ * @brief	Разрешение формирования прерывания по завершении работы канала
+ */
+typedef enum {
+	HAL_DMA_INTERRUPT_DISABLE	= 0x0 << DMA_CFG_CH_EN_IRQ_S,	///< Отключено
+	HAL_DMA_INTERRUPT_ENABLE	= 0x1 << DMA_CFG_CH_EN_IRQ_S,	///< Включено
+} HAL_DMA_Interrupt;
+
+
+/**
  * @brief	Объявление структуры обработчкиа DMA
  */
 typedef struct {
@@ -96,6 +111,8 @@ typedef struct {
 
 	HAL_DMA_PeripheryLine	SourcePeriphery;		///< Линия чтения
 	HAL_DMA_PeripheryLine	DestinationPeriphery;	///< Линия записи
+
+	HAL_DMA_Interrupt		Interrupt;				///< Прерывание по завершению работы канала
 
 	uint8_t					*SrcBuffPtr;			///< Адрес буфера чтения
 	uint8_t					*DstBuffPtr;			///< Адрес буфера записи
