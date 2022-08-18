@@ -2,9 +2,23 @@
 
 
 void HAL_ADC_Init(HAL_ADC_TypeDef *AdcTypeDef) {
+	// Включение тактирования аналоговых блоков
 	PM->CLK_APB_P_SET |= 1 << 15;
 
-	ANALOG_REG->ADC_CONFIG = 0x0;
+	// Конфигурация АЦП
+
+	// Управление перезапуском АЦП
+	// Источник опорного напряжения
+	// Источник опорного напряжения
+	// Канал АЦП
+	ANALOG_REG->ADC_CONFIG =	1 << ADC_RESETn_S				|	\
+								AdcTypeDef->Ref << ADC_EXTREF_S	|	\
+								1 << ADC_EXTPAD_EN_S			|	\
+								AdcTypeDef->Channel << ADC_SEL_S;
+}
+
+
+inline void HAL_ADC_Enable(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_CONFIG |= 1 << ADC_EN_S;
 	ANALOG_REG->ADC_CONFIG |= 1 << ADC_RESETn_S;
 	ANALOG_REG->ADC_CONFIG |= AdcTypeDef->Ref << ADC_EXTREF_S;
