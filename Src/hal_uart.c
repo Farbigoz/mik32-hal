@@ -4,6 +4,8 @@
  * @brief	Режим передачи
  */
 void HAL_UART_Init(HAL_UART_HandleTypeDef *UartTypeDef) {
+	uint32_t cfg;
+
 	// Init UART clock
 	if (UartTypeDef->Instance == UART_0)
 	{
@@ -25,15 +27,16 @@ void HAL_UART_Init(HAL_UART_HandleTypeDef *UartTypeDef) {
 	// Init.BaudRate
 	UartTypeDef->Instance->DIVIDER = (CPU_CLOCK_MHZ*1000*1000) / UartTypeDef->Init.BaudRate;
 
-	UartTypeDef->Instance->CONTROL1 |= UartTypeDef->Init.TxState;
-	UartTypeDef->Instance->CONTROL1 |= UartTypeDef->Init.RxState;
+	cfg =	UartTypeDef->Init.TxState			|	\
+			UartTypeDef->Init.RxState;
+	UartTypeDef->Instance->CONTROL1 = cfg;
 
-	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.TxPolarityInvert;
-	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.RxPolarityInvert;
+	cfg =	UartTypeDef->Init.TxPolarityInvert	|	\
+			UartTypeDef->Init.RxPolarityInvert	|	\
 
-	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.DataPinSwap;
-
-	UartTypeDef->Instance->CONTROL2 |= UartTypeDef->Init.Mode;
+			UartTypeDef->Init.DataPinSwap		|	\
+			UartTypeDef->Init.Mode;
+	UartTypeDef->Instance->CONTROL2 = cfg;
 
 	// Enable
 	UartTypeDef->Instance->CONTROL1 |= 1 << UART_CONTROL1_UE_S;
