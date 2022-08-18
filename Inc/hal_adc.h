@@ -54,7 +54,23 @@ void HAL_ADC_Init(HAL_ADC_TypeDef *hadc);
 
 
 /**
- * @brief	Запустить измерение входного уровня сигнала АЦП (Единичное измерение)
+ * @brief	Включение блока АЦП
+ *
+ * @param	hadc - Экземпляр обработчкиа АЦП
+ */
+void HAL_ADC_Enable(HAL_ADC_TypeDef *AdcTypeDef);
+
+
+/**
+ * @brief	Выключение блока АЦП
+ *
+ * @param	hadc - Экземпляр обработчкиа АЦП
+ */
+void HAL_ADC_Disable(HAL_ADC_TypeDef *AdcTypeDef);
+
+
+/**
+ * @brief	Запустить единичное измерение входного уровня сигнала АЦП
  *
  * @param	hadc - Экземпляр обработчкиа АЦП
  */
@@ -62,7 +78,7 @@ void HAL_ADC_Start(HAL_ADC_TypeDef *hadc);
 
 
 /**
- * @brief	Остановка измерения входного уровня сигнала АЦП (Если было вызвано единичное измерение)
+ * @brief	Остановка единичного измерения входного уровня сигнала АЦП
  *
  * @param	hadc - Экземпляр обработчкиа АЦП
  */
@@ -70,7 +86,7 @@ void HAL_ADC_Stop(HAL_ADC_TypeDef *hadc);
 
 
 /**
- * @brief	Запуск непрерывной работы АЦП
+ * @brief	Запуск циклического измерения АЦП
  *
  * @param	hadc - Экземпляр обработчкиа АЦП
  */
@@ -78,7 +94,7 @@ void HAL_ADC_Start_Continuous(HAL_ADC_TypeDef *hadc);
 
 
 /**
- * @brief	Остановка непрерываной работы АЦП
+ * @brief	Остановка циклического измерения АЦП
  *
  * @param	hadc - Экземпляр обработчкиа АЦП
  */

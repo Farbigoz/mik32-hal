@@ -20,36 +20,37 @@ void HAL_ADC_Init(HAL_ADC_TypeDef *AdcTypeDef) {
 
 inline void HAL_ADC_Enable(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_CONFIG |= 1 << ADC_EN_S;
-	ANALOG_REG->ADC_CONFIG |= 1 << ADC_RESETn_S;
-	ANALOG_REG->ADC_CONFIG |= AdcTypeDef->Ref << ADC_EXTREF_S;
-	ANALOG_REG->ADC_CONFIG |= 1 << ADC_EXTPAD_EN_S;
-	ANALOG_REG->ADC_CONFIG |= AdcTypeDef->Channel << ADC_SEL_S;
 }
 
 
-void HAL_ADC_Start(HAL_ADC_TypeDef *AdcTypeDef) {
+inline void HAL_ADC_Disable(HAL_ADC_TypeDef *AdcTypeDef) {
+	ANALOG_REG->ADC_CONFIG &= ~(1 << ADC_EN_S);
+}
+
+
+inline void HAL_ADC_Start(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_SINGLE = 1;
 }
 
-void HAL_ADC_Stop(HAL_ADC_TypeDef *AdcTypeDef) {
+inline void HAL_ADC_Stop(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_SINGLE = 0;
 }
 
 
-void HAL_ADC_Start_Continuous(HAL_ADC_TypeDef *AdcTypeDef) {
+inline void HAL_ADC_Start_Continuous(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_CONTINIUS = 1;
 }
 
-void HAL_ADC_Stop_Continuous(HAL_ADC_TypeDef *AdcTypeDef) {
+inline void HAL_ADC_Stop_Continuous(HAL_ADC_TypeDef *AdcTypeDef) {
 	ANALOG_REG->ADC_CONTINIUS = 0;
 }
 
 
-bool HAL_ADC_ValueAvailable(HAL_ADC_TypeDef *AdcTypeDef) {
+inline bool HAL_ADC_ValueAvailable(HAL_ADC_TypeDef *AdcTypeDef) {
 	return ANALOG_REG->ADC_VALID != 0;
 }
 
 
-uint16_t HAL_ADC_GetValue(HAL_ADC_TypeDef *AdcTypeDef) {
+inline uint16_t HAL_ADC_GetValue(HAL_ADC_TypeDef *AdcTypeDef) {
 	return ANALOG_REG->ADC_VALUE & 0xFFF;
 }
