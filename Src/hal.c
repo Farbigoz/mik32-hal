@@ -1,8 +1,34 @@
+/*
+ *  Copyright (c) 2022   Author: Столяров Сергей
+ *                      Company: НПЦ Промэлектроника
+ *                          URL: https://www.npcprom.ru/
+ *  
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *  
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *  
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ */
+
 #include "../Inc/hal.h"
 
 
 uint64_t __div64_32(uint64_t rem, uint32_t base)
 {
+	// https://github.com/spotify/linux/blob/master/lib/div64.c
+
 	uint64_t b = base;
 	uint64_t res, d = 1;
 	uint32_t high = rem >> 32;
@@ -42,7 +68,6 @@ inline uint64_t HAL_GetCpuClock(void)
 
 __weak uint32_t HAL_GetCpuTimeMs(void)
 {
-	//return (uint32_t)HAL_GetCpuTick() / (CPU_CLOCK_MHZ * 1000);
 	return __div64_32(HAL_GetCpuClock(), CPU_CLOCK_MHZ * 1000);
 }
 
