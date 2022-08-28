@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../lib/mik32-hal/Inc/hal.h"
-#include "../lib/mik32-hal/Inc/hal_uart.h"
-#include "../lib/mik32-hal/Inc/hal_gpio.h"
-#include "../lib/mik32-hal/Inc/hal_gpio_macros.h"
+#include <hal.h>
+#include <hal_uart.h>
+#include <hal_gpio.h>
+#include <hal_gpio_macros.h>
 
 HAL_UART_HandleTypeDef huart1 = {0};
 

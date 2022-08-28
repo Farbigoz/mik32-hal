@@ -1,5 +1,5 @@
-#include "../lib/mik32-hal/Inc/hal.h"
-#include "../lib/mik32-hal/Inc/hal_dac.h"
+#include <hal.h>
+#include <hal_dac.h>
 
 HAL_DAC_TypeDef dac1 = {0};
 

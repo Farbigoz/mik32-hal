@@ -1,8 +1,8 @@
-#include "../lib/mik32-hal/Inc/hal.h"
-#include "../lib/mik32-hal/Inc/hal_irq.h"
-#include "../lib/mik32-hal/Inc/hal_gpio.h"
-#include "../lib/mik32-hal/Inc/hal_timer32.h"
-#include "../lib/mik32-hal/Inc/hal_gpio_macros.h"
+#include <hal.h>
+#include <hal_irq.h>
+#include <hal_gpio.h>
+#include <hal_timer32.h>
+#include <hal_gpio_macros.h>
 
 
 HAL_TIMER32_TypeDef htim1 = {0};

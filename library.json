@@ -1,0 +1,27 @@
+{
+  "name": "MIK32 HAL",
+  "authors":
+  {
+    "name": "Stolyarov Sergey",
+    "maintainer": true,
+    "company": "npcprom"
+  },
+
+  "license": "MIT",
+  
+  "version": "0.1",
+  
+  "keywords": ["mikron", "npcprom", "mik32", "mik-32", "mcu32", "mcu-32", "amur", "hal"],
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Farbigoz/mik32-hal"
+  },
+  
+  "platforms": "*",
+  
+  "build": {
+    "includeDir": "Inc",
+    "srcDir": "Src"
+  }
+}

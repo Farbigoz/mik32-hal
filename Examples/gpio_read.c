@@ -1,6 +1,6 @@
-#include "../lib/mik32-hal/Inc/hal.h"
-#include "../lib/mik32-hal/Inc/hal_gpio.h"
-#include "../lib/mik32-hal/Inc/hal_gpio_macros.h"
+#include <hal.h>
+#include <hal_gpio.h>
+#include <hal_gpio_macros.h>
 
 
 HAL_GPIO_TypeDef LED;
