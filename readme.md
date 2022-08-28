@@ -4,9 +4,14 @@
 
 ## Как использовать
 
+### Вариант 1
 - Создаём проект PlatformIO в VSCode или в Clion;
 - В консоли переходим в каталог `$PROJECT_PATH\lib\`;
 - Клонируем проект в дирректорию `lib` командой `git clone git@github.com:Farbigoz/mik32-hal.git`.
+
+### Вариант 2
+- Создаём проект PlatformIO в VSCode или в Clion;
+- В файле `platformio.ini` прописываем `lib_deps = fabriziog/MIK32-HAL`
 
 ## Авторы
 

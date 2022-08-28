@@ -1,15 +1,20 @@
 {
-  "name": "MIK32 HAL",
+  "name": "MIK32-HAL",
   "authors":
-  {
-    "name": "Stolyarov Sergey",
-    "maintainer": true,
-    "company": "npcprom"
-  },
+  [
+    {
+      "name": "Stolyarov Sergey",
+      "maintainer": true
+    },
+    {
+      "name": "НПЦ Промэлектроника"
+    }
+  ],
+  "description": "Библиотека для высокоуровнего взаимодействия с периферией микроконтроллера МК-32 Амур.",
 
   "license": "MIT",
   
-  "version": "0.1",
+  "version": "0.1.1",
   
   "keywords": ["mikron", "npcprom", "mik32", "mik-32", "mcu32", "mcu-32", "amur", "hal"],
   
@@ -18,7 +23,7 @@
     "url": "https://github.com/Farbigoz/mik32-hal"
   },
   
-  "platforms": "*",
+  "platforms": ["MIKRON-platform-npcprom", "MIKRON"],
   
   "build": {
     "includeDir": "Inc",
