@@ -1,3 +1,5 @@
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/fabriziog/library/MIK32-HAL.svg)](https://registry.platformio.org/libraries/fabriziog/MIK32-HAL)
+
 # HAL МК-32 Амур
 
 Библиотека с открытым кодом для высокоуровнего взаимодействия с периферией микроконтроллера МК-32 Амур.
